@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Rahul Ravindran</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&family=Montserrat:wght@600;700;800&display=swap"
+        rel="stylesheet" />
+    <!-- Material Symbols -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error-container": "#ffdad6",
+                        "tertiary": "#f8f5f5",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "background": "#121414",
+                        "on-tertiary-fixed-variant": "#474746",
+                        "on-primary-container": "#7e22ce",
+                        "surface-container-low": "#1a1c1c",
+                        "inverse-primary": "#7e22ce",
+                        "on-background": "#e3e2e2",
+                        "surface-dim": "#121414",
+                        "inverse-on-surface": "#2f3131",
+                        "tertiary-fixed": "#e5e2e1",
+                        "surface-container-highest": "#343535",
+                        "primary": "#f3e8ff",
+                        "surface-tint": "#9333ea",
+                        "secondary-container": "#4a4949",
+                        "error-container": "#93000a",
+                        "on-error": "#690005",
+                        "surface-container-lowest": "#0d0e0f",
+                        "on-primary-fixed-variant": "#6b21a8",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "surface-container-high": "#292a2a",
+                        "on-tertiary": "#303030",
+                        "surface-variant": "#343535",
+                        "on-primary": "#120024",
+                        "inverse-surface": "#e3e2e2",
+                        "on-tertiary-fixed": "#1b1b1c",
+                        "secondary": "#c8c6c5",
+                        "surface-container": "#1e2020",
+                        "surface-bright": "#383939",
+                        "secondary-fixed": "#e5e2e1",
+                        "error": "#ffb4ab",
+                        "on-primary-fixed": "#120024",
+                        "on-secondary-container": "#bab8b7",
+                        "outline": "#849495",
+                        "on-tertiary-container": "#5f5e5e",
+                        "outline-variant": "#3b494b",
+                        "primary-fixed": "#c084fc",
+                        "tertiary-container": "#dcd9d8",
+                        "surface": "#121414",
+                        "primary-fixed-dim": "#9333ea",
+                        "on-surface": "#e3e2e2",
+                        "on-surface-variant": "#b9cacb",
+                        "primary-container": "#d8b4fe",
+                        "on-secondary-fixed-variant": "#474646",
+                        "on-secondary": "#313030"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-x-mobile": "20px",
+                        "base": "8px",
+                        "margin-x-desktop": "32px",
+                        "container-max": "1400px",
+                        "gutter": "24px",
+                        "section-gap": "160px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "label-sm": ["JetBrains Mono"],
+                        "body-md": ["Inter"],
+                        "display-lg": ["Montserrat"],
+                        "headline-md": ["Montserrat"],
+                        "display-lg-mobile": ["Montserrat"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "display-lg": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-md": ["32px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "display-lg-mobile": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700" }]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            background-color: transparent;
+        }
+
+        .glass-box {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border-left: 4px solid #9333ea;
+        }
+
+        .outer-glow:hover {
+            box-shadow: 0 0 20px rgba(147, 51, 234, 0.35);
+        }
+
+        .project-card:hover .project-overlay {
+            opacity: 1;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .glow-hover:hover {
+            box-shadow: 0 0 25px rgba(147, 51, 234, 0.25);
+        }
+
+        .hero-headline {
+            text-shadow: 0 4px 30px rgba(0, 0, 0, 0.95), 0 2px 10px rgba(0, 0, 0, 0.95);
+        }
+
+        /* Brand logo swipe animation */
+        .logo-container {
+            display: inline-flex !important;
+            align-items: center;
+        }
+        @media (min-width: 768px) {
+            .logo-container {
+                min-width: 280px;
+            }
+        }
+
+        .logo-swipe {
+            max-width: 0;
+            opacity: 0;
+            display: inline-block;
+            white-space: nowrap;
+            transition: max-width 1.2s cubic-bezier(0.77, 0, 0.175, 1), opacity 0.8s ease;
+        }
+
+        .logo-space {
+            max-width: 0;
+            opacity: 0;
+            display: inline-block;
+            white-space: nowrap;
+            transition: max-width 1.2s cubic-bezier(0.77, 0, 0.175, 1), opacity 0.8s ease;
+        }
+
+        .logo-container:hover .logo-swipe,
+        .logo-container.expanded .logo-swipe {
+            max-width: 300px;
+            opacity: 1;
+        }
+
+        .logo-container:hover .logo-space,
+        .logo-container.expanded .logo-space {
+            max-width: 12px;
+            opacity: 1;
+        }
+
+        /* 3D Intro Logo styling */
+        @keyframes logoFloat {
+            0%, 100% {
+                transform: translateZ(50px) translateY(0px) rotateX(0deg) rotateY(0deg);
+                filter: drop-shadow(0 10px 20px rgba(147,51,234,0.3));
+            }
+            50% {
+                transform: translateZ(80px) translateY(-15px) rotateX(5deg) rotateY(-5deg);
+                filter: drop-shadow(0 25px 35px rgba(147,51,234,0.5));
+            }
+        }
+        .animate-logo-float {
+            animation: logoFloat 4s ease-in-out infinite;
+        }
+        #loader-logo-wrapper {
+            transform-style: preserve-3d;
+            will-change: transform;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-transparent text-on-background selection:bg-primary-fixed-dim selection:text-on-primary-fixed overflow-x-hidden overflow-hidden">
+
+    <!-- 3D Intro Loading Screen -->
+    <div id="intro-loader" class="fixed inset-0 z-[9999] bg-[#0A0A0A] flex flex-col justify-center items-center transition-all duration-1000 ease-out select-none">
+        <!-- Ambient radial glow behind the logo -->
+        <div class="absolute w-[500px] h-[500px] bg-purple-600/10 rounded-full blur-[120px] pointer-events-none animate-pulse"></div>
+        
+        <!-- 3D Perspective Container -->
+        <div class="relative flex flex-col items-center gap-8" style="perspective: 1000px;">
+            <!-- Logo Image Wrapper with 3D shadow and hover effect -->
+            <div id="loader-logo-wrapper" class="w-48 h-48 relative transition-transform duration-500 ease-out transform" style="transform-style: preserve-3d; transform: rotateY(0deg) rotateX(0deg);">
+                <!-- 3D ambient shadow -->
+                <div class="absolute inset-0 bg-purple-600/20 rounded-full blur-xl filter opacity-75 transform translate-y-6 scale-95" style="transform: translateZ(-50px);"></div>
+                
+                <!-- Main Logo Image with glossy glass overlay -->
+                <img src="img/RR_logo.png" alt="RR Logo" class="w-full h-full object-contain relative z-10 animate-logo-float" style="transform: translateZ(50px);">
+            </div>
+            
+            <!-- Loading Text & Progress Bar -->
+            <div class="flex flex-col items-center gap-3 relative z-20">
+                <span class="font-label-sm text-xs text-primary-fixed-dim uppercase tracking-[0.4em] font-bold animate-pulse">Rahul Ravindran</span>
+                <div class="w-48 bg-surface-container-highest/50 border border-outline-variant/10 rounded-full h-1 overflow-hidden relative">
+                    <div id="loader-bar" class="h-full bg-primary-fixed-dim w-0 transition-all duration-300 ease-out"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Background Canvas for Scroll Animation -->
+    <div class="fixed inset-0 pointer-events-none -z-10 bg-[#0A0A0A] overflow-hidden" id="canvas-container">
+        <canvas id="scroll-canvas" class="w-full h-full block"></canvas>
+        <!-- Soft dark overlay to ensure text legibility -->
+        <div
+            class="absolute inset-0 bg-gradient-to-b from-black/90 via-black/50 to-black/10 md:bg-gradient-to-r md:from-black/90 md:via-black/30 md:to-transparent">
+        </div>
+    </div>
+
+    <!-- TopNavBar -->
+    <header
+        class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md dark:bg-background/80 border-b border-outline-variant/20">
+        <nav
+            class="flex justify-between items-center h-20 px-margin-x-mobile md:px-margin-x-desktop max-w-container-max mx-auto">
+            <a class="logo-container font-display-lg text-headline-md tracking-tighter text-on-background dark:text-on-background"
+                href="index.html">
+                <img src="img/RR_logo.png" alt="RR Logo" class="h-9 w-auto object-contain mr-2 filter drop-shadow-[0_0_8px_rgba(147,51,234,0.35)]">
+                <span class="logo-letter">R</span><span
+                    class="logo-swipe text-white overflow-hidden">ahul</span><span
+                    class="logo-space overflow-hidden">&nbsp;</span><span class="logo-letter">R</span><span
+                    class="logo-swipe text-white overflow-hidden">avindran</span>
+            </a>
+
+            <!-- Desktop Nav -->
+            <ul class="hidden md:flex gap-10">
+                <li><a class="font-body-md text-body-md text-primary-fixed-dim font-bold border-b-2 border-primary-fixed-dim pb-1 transition-colors duration-300"
+                        href="index.html">Home</a></li>
+                <li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary-fixed-dim transition-colors duration-300"
+                        href="projects.html">Projects</a></li>
+                <li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary-fixed-dim transition-colors duration-300"
+                        href="about.html">About</a></li>
+                <li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary-fixed-dim transition-colors duration-300"
+                        href="resume.html">Resume</a></li>
+                <li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary-fixed-dim transition-colors duration-300"
+                        href="contact.html">Contact</a></li>
+            </ul>
+
+            <a href="contact.html"
+                class="hidden md:block bg-purple-600 text-white px-6 py-3 rounded-full font-bold text-sm uppercase tracking-wider active:opacity-80 active:scale-95 transition-all text-center outer-glow">
+                Let's Talk
+            </a>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="md:hidden text-on-background focus:outline-none" id="mobile-menu-toggle"
+                aria-label="Toggle Menu">
+                <span class="material-symbols-outlined text-3xl">menu</span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="fixed inset-0 z-50 transition-opacity duration-300 pointer-events-none opacity-0"
+        id="mobile-menu-backdrop">
+        <div class="absolute inset-0 bg-background/60 backdrop-blur-sm"></div>
+        <div class="absolute right-0 top-0 w-80 h-full bg-surface-container border-l border-outline-variant/30 flex flex-col p-8 transition-transform duration-300 transform translate-x-full shadow-2xl"
+            id="mobile-menu-drawer">
+            <div class="flex justify-between items-center mb-12">
+                <span class="logo-container font-display-lg text-headline-md tracking-tighter text-on-background">
+                    <img src="img/RR_logo.png" alt="RR Logo" class="h-9 w-auto object-contain mr-2 filter drop-shadow-[0_0_8px_rgba(147,51,234,0.35)]">
+                    <span class="logo-letter">R</span><span class="logo-swipe text-white overflow-hidden">ahul</span><span
+                        class="logo-space overflow-hidden">&nbsp;</span><span class="logo-letter">R</span><span
+                        class="logo-swipe text-white overflow-hidden">avindran</span>
+                </span>
+                <button class="text-on-background focus:outline-none" id="mobile-menu-close" aria-label="Close Menu">
+                    <span class="material-symbols-outlined text-3xl">close</span>
+                </button>
+            </div>
+            <ul class="flex flex-col gap-6 text-xl">
+                <li><a class="font-body-lg text-primary-fixed-dim font-bold transition-colors duration-300 block py-2 border-l-4 border-primary-fixed-dim pl-4"
+                        href="index.html">Home</a></li>
+                <li><a class="font-body-lg text-on-surface-variant hover:text-primary-fixed-dim transition-colors duration-300 block py-2 pl-4"
+                        href="projects.html">Projects</a></li>
+                <li><a class="font-body-lg text-on-surface-variant hover:text-primary-fixed-dim transition-colors duration-300 block py-2 pl-4"
+                        href="about.html">About</a></li>
+                <li><a class="font-body-lg text-on-surface-variant hover:text-primary-fixed-dim transition-colors duration-300 block py-2 pl-4"
+                        href="resume.html">Resume</a></li>
+                <li><a class="font-body-lg text-on-surface-variant hover:text-primary-fixed-dim transition-colors duration-300 block py-2 pl-4"
+                        href="contact.html">Contact</a></li>
+            </ul>
+            <div class="mt-auto">
+                <a href="contact.html"
+                    class="w-full block bg-primary-fixed-dim text-on-primary-fixed py-4 rounded-full font-bold text-sm uppercase tracking-wider text-center active:opacity-80 active:scale-95 transition-all shadow-lg shadow-primary/10">
+                    Let's Talk
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <!-- Hero Section -->
+        <section
+            class="min-h-screen flex items-center pt-24 pb-12 px-margin-x-mobile md:px-margin-x-desktop max-w-container-max mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center w-full">
+
+                <!-- Text Content (Left 7 Columns on Desktop) -->
+                <div class="md:col-span-7 z-10 space-y-8">
+                    <div class="space-y-4">
+
+                        <h1
+                            class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-background max-w-2xl hero-headline">
+                            Product Designer &amp; Developer building seamless digital experiences.
+                        </h1>
+                    </div>
+                    <div class="flex flex-wrap gap-6">
+                        <a href="projects.html"
+                            class="bg-primary-fixed-dim text-white px-8 py-4 rounded-full font-bold text-sm uppercase tracking-wider active:opacity-80 active:scale-95 transition-all outer-glow flex items-center gap-2">
+                            View My Work
+                            <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                        </a>
+                        <a href="contact.html"
+                            class="border border-on-background/20 text-on-background px-8 py-4 rounded-full font-bold text-sm uppercase tracking-wider hover:bg-blue-800 active:opacity-80 active:scale-95 transition-all text-center">
+                            Get in Touch
+                        </a>
+                    </div>
+
+                    <!-- Quotes Listing Box (Floating Style) -->
+                    <div class="glass-box p-8 max-w-md mt-12 transition-all duration-500 transform cursor-pointer select-none glow-hover"
+                        id="quote-container">
+                        <div class="flex flex-col gap-4">
+                            <span class="material-symbols-outlined text-primary-fixed-dim"
+                                style="font-variation-settings: 'FILL' 1;">format_quote</span>
+                            <p class="font-body-lg text-body-lg text-on-surface-variant italic" id="quote-text">
+                                "Design is not just what it looks like and feels like. Design is how it works."
+                            </p>
+                            <p class="font-label-sm text-label-sm text-primary-fixed-dim uppercase font-bold"
+                                id="quote-author">Steve Jobs</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Professional Portrait (Right 5 Columns on Desktop) -->
+                <div class="md:col-span-5 mt-4 md:-mt-16 relative group" id="portrait-wrapper">
+                    <div
+                        class="aspect-[4/5] bg-surface-container overflow-hidden rounded-xl border border-outline-variant/10 shadow-2xl relative">
+                        <img alt="Alex Design - Professional Portrait"
+                            class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
+                            data-alt="A professional portrait..." src="./img/RAHUL.jpg" />
+                    </div>
+                    <!-- Floating Quote/Stat -->
+                    <div
+                        class="absolute -bottom-6 -left-6 bg-surface-container-high p-6 border border-outline-variant/30 rounded-lg hidden md:block group-hover:border-primary-fixed-dim transition-all">
+                        <p class="font-label-sm text-primary-fixed-dim mb-2 font-bold uppercase tracking-wider">CURRENT
+                            FOCUS</p>
+                        <p class="font-headline-md text-on-background">AI-Driven UI | M Tech </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Selected Projects Teaser -->
+        <section class="py-section-gap px-margin-x-mobile md:px-margin-x-desktop max-w-container-max mx-auto">
+            <div class="flex justify-between items-end mb-16">
+                <div class="space-y-4">
+                    <span
+                        class="font-label-sm text-label-sm text-primary-fixed-dim uppercase tracking-widest block font-bold">Case
+                        Studies</span>
+                    <h2 class="font-headline-md text-headline-md text-on-background">My Works</h2>
+                </div>
+                <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary-fixed-dim flex items-center gap-2 pb-1 border-b border-outline-variant/30 transition-colors group"
+                    href="projects.html">
+                    All Projects
+                    <span
+                        class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">east</span>
+                </a>
+            </div>
+
+            <!-- Bento Grid Style Project Layout -->
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+                <!-- Large Project Card -->
+                <a href="projects.html"
+                    class="md:col-span-8 group relative overflow-hidden rounded-xl bg-surface-container border border-outline-variant/10 cursor-pointer shadow-lg hover:border-primary-fixed-dim/30 transition-all duration-500 block">
+                    <div class="aspect-[16/9] w-full overflow-hidden">
+                        <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                            data-alt="A futuristic web application dashboard interface for a financial technology platform..."
+                            src="./img/ai_face_attendance.png" />
+                    </div>
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-80 group-hover:opacity-70 transition-opacity">
+                    </div>
+                    <div class="absolute bottom-0 left-0 p-8 w-full">
+                        <div class="flex gap-2 mb-3">
+                            <span
+                                class="bg-surface-container-highest text-on-surface px-3 py-1 rounded-full font-label-sm text-label-sm uppercase font-bold tracking-wider">Web
+                                App</span>
+                        </div>
+                        <h3
+                            class="font-headline-md text-headline-md text-on-background group-hover:text-primary-fixed-dim transition-colors">
+                            AI Face Attendance software</h3>
+                    </div>
+                </a>
+
+                <!-- Side Small Card -->
+                <a href="projects.html"
+                    class="md:col-span-4 group relative overflow-hidden rounded-xl bg-surface-container border border-outline-variant/10 cursor-pointer shadow-lg hover:border-primary-fixed-dim/30 transition-all duration-500 block">
+                    <div class="aspect-[4/5] w-full overflow-hidden">
+                        <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                            data-alt="A close-up mobile identity application..."
+                            src="./img/branding_web.png" />
+                    </div>
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-80 group-hover:opacity-70 transition-opacity">
+                    </div>
+                    <div class="absolute bottom-0 left-0 p-8 w-full">
+                        <div class="flex gap-2 mb-3">
+                            <span
+                                class="bg-surface-container-highest text-on-surface px-3 py-1 rounded-full font-label-sm text-label-sm uppercase font-bold tracking-wider">Branding</span>
+                        </div>
+                        <h3
+                            class="font-headline-md text-headline-md text-on-background text-2xl group-hover:text-primary-fixed-dim transition-colors">
+                            Static Websites</h3>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Tech Stack / Services Section (Subtle Chips) -->
+        <section
+            class="py-section-gap px-margin-x-mobile md:px-margin-x-desktop max-w-container-max mx-auto text-center border-t border-outline-variant/10">
+            <h2 class="font-label-sm text-sm text-on-surface-variant uppercase tracking-[0.3em] mb-12">Core
+                Competencies</h2>
+            <div class="flex flex-wrap justify-center gap-6 max-w-4xl mx-auto">
+                <span
+                    class="px-8 py-4 md:px-10 md:py-5 rounded-full bg-surface-container-high border border-outline-variant/20 text-on-surface font-label-sm font-bold text-sm md:text-base hover:border-primary-fixed-dim/40 hover:text-primary-fixed-dim transition-all cursor-default">Web
+                    Development</span>
+                <span
+                    class="px-8 py-4 md:px-10 md:py-5 rounded-full bg-surface-container-high border border-outline-variant/20 text-on-surface font-label-sm font-bold text-sm md:text-base hover:border-primary-fixed-dim/40 hover:text-primary-fixed-dim transition-all cursor-default">UI/UX
+                    Design</span>
+                <span
+                    class="px-8 py-4 md:px-10 md:py-5 rounded-full bg-surface-container-high border border-outline-variant/20 text-on-surface font-label-sm font-bold text-sm md:text-base hover:border-primary-fixed-dim/40 hover:text-primary-fixed-dim transition-all cursor-default">Graphic
+                    Design</span>
+                <span
+                    class="px-8 py-4 md:px-10 md:py-5 rounded-full bg-surface-container-high border border-outline-variant/20 text-on-surface font-label-sm font-bold text-sm md:text-base hover:border-primary-fixed-dim/40 hover:text-primary-fixed-dim transition-all cursor-default">Creative
+                    Direction</span>
+                <span
+                    class="px-8 py-4 md:px-10 md:py-5 rounded-full bg-surface-container-high border border-outline-variant/20 text-on-surface font-label-sm font-bold text-sm md:text-base hover:border-primary-fixed-dim/40 hover:text-primary-fixed-dim transition-all cursor-default">Software
+                    Development</span>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer
+        class="w-full py-section-gap bg-surface-container-lowest dark:bg-surface-container-lowest border-t border-outline-variant/10">
+        <div
+            class="flex flex-col md:flex-row justify-between items-start px-margin-x-mobile md:px-margin-x-desktop max-w-container-max mx-auto gap-12 md:gap-0">
+            <div class="space-y-6">
+                <a class="font-display-lg text-headline-md text-on-background dark:text-on-background"
+                    href="index.html">Rahul Ravindran</a>
+                <p class="font-body-md text-body-md text-on-surface-variant max-w-xs">Crafting digital products with a
+                    focus on simplicity and high-performance engineering.</p>
+                <p class="font-body-md text-body-md text-on-surface-variant/50">© 2026 Rahul Ravindran Built with
+                    precision.</p>
+            </div>
+            <div class="grid grid-cols-2 gap-16">
+                <div class="flex flex-col gap-4">
+                    <span
+                        class="font-label-sm text-label-sm text-primary-fixed-dim uppercase tracking-wider font-bold">Navigation</span>
+                    <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary-fixed-dim transition-colors duration-300"
+                        href="index.html">Home</a>
+                    <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary-fixed-dim transition-colors duration-300"
+                        href="projects.html">Projects</a>
+                    <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary-fixed-dim transition-colors duration-300"
+                        href="about.html">About</a>
+                    <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary-fixed-dim transition-colors duration-300"
+                        href="resume.html">Resume</a>
+                    <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary-fixed-dim transition-colors duration-300"
+                        href="contact.html">Contact</a>
+                </div>
+                <div class="flex flex-col gap-4">
+                    <span
+                        class="font-label-sm text-label-sm text-primary-fixed-dim uppercase tracking-wider font-bold">Social</span>
+                    <div class="flex gap-4 items-center">
+                        <a href="https://www.linkedin.com/in/rahul-ravindran-886043245?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" class="text-on-surface-variant hover:text-primary-fixed-dim transition-all duration-300 transform hover:scale-110 active:scale-95" aria-label="LinkedIn">
+                            <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                            </svg>
+                        </a>
+                        <a href="https://wa.me/919790256404" target="_blank" rel="noopener noreferrer" class="text-on-surface-variant hover:text-primary-fixed-dim transition-all duration-300 transform hover:scale-110 active:scale-95" aria-label="WhatsApp">
+                            <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.59-4.846c1.66.986 3.296 1.48 4.905 1.481 5.482 0 9.94-4.461 9.943-9.945.002-2.657-1.03-5.155-2.905-7.03C16.715 1.78 14.223.747 11.565.747c-5.486 0-9.944 4.461-9.947 9.945-.001 1.777.478 3.493 1.39 5.022L2.004 22l6.402-1.68c1.554.847 3.1 1.28 4.241 1.28zM17.66 14.86c-.29-.145-1.713-.846-1.977-.942-.265-.096-.458-.145-.65.145-.19.29-.738.941-.904 1.133-.166.19-.333.214-.623.07-.29-.145-1.226-.452-2.335-1.442-.863-.77-1.446-1.72-1.616-2.011-.17-.29-.018-.447.127-.591.13-.13.29-.338.435-.507.145-.17.193-.29.29-.483.097-.19.048-.361-.024-.506-.072-.145-.65-1.566-.89-2.146-.234-.56-.472-.483-.65-.492-.17-.008-.361-.01-.554-.01-.193 0-.506.072-.77.361-.266.29-1.012.99-1.012 2.413 0 1.422 1.036 2.795 1.18 2.99.145.19 2.04 3.115 4.94 4.368.69.298 1.23.476 1.65.61.693.22 1.325.19 1.824.115.556-.083 1.713-.699 1.953-1.374.24-.675.24-1.253.169-1.374-.072-.121-.265-.193-.555-.338z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.instagram.com/_.r_a_h_u_l._03?igsh=aG51Zmt6bDFkYmNj" target="_blank" rel="noopener noreferrer" class="text-on-surface-variant hover:text-primary-fixed-dim transition-all duration-300 transform hover:scale-110 active:scale-95" aria-label="Instagram">
+                            <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Quotes Rotator
+        const quotes = [
+            { text: "Make a Steps to reach your aim." },
+            { text: "Live today-tomorrow is not Guaranteed"},
+            { text: "Design is not just what it looks like and feels like, it's how it works"},
+        ];
+
+        
+        let currentQuote = 0;
+        const quoteText = document.getElementById('quote-text');
+        const quoteAuthor = document.getElementById('quote-author');
+        const quoteContainer = document.getElementById('quote-container');
+
+        function rotateQuote() {
+            quoteContainer.classList.add('opacity-0', 'translate-y-4');
+            setTimeout(() => {
+                currentQuote = (currentQuote + 1) % quotes.length;
+                quoteText.textContent = `"${quotes[currentQuote].text}"`;
+                quoteAuthor.textContent = quotes[currentQuote].author;
+                quoteContainer.classList.remove('opacity-0', 'translate-y-4');
+            }, 500);
+        }
+
+        let rotationInterval = setInterval(rotateQuote, 5000);
+
+        // Interactive pause/resume/skip on quote box click
+        quoteContainer.addEventListener('click', () => {
+            clearInterval(rotationInterval);
+            rotateQuote();
+            rotationInterval = setInterval(rotateQuote, 5000);
+        });
+
+        // Mobile Menu Drawer Control
+        const menuToggle = document.getElementById('mobile-menu-toggle');
+        const menuClose = document.getElementById('mobile-menu-close');
+        const menuBackdrop = document.getElementById('mobile-menu-backdrop');
+        const menuDrawer = document.getElementById('mobile-menu-drawer');
+
+        function openMobileMenu() {
+            menuBackdrop.classList.remove('pointer-events-none', 'opacity-0');
+            menuBackdrop.classList.add('opacity-100');
+            menuDrawer.classList.remove('translate-x-full');
+            document.body.classList.add('overflow-hidden');
+        }
+
+        function closeMobileMenu() {
+            menuBackdrop.classList.remove('opacity-100');
+            menuBackdrop.classList.add('opacity-0', 'pointer-events-none');
+            menuDrawer.classList.add('translate-x-full');
+            document.body.classList.remove('overflow-hidden');
+        }
+
+        menuToggle.addEventListener('click', openMobileMenu);
+        menuClose.addEventListener('click', closeMobileMenu);
+        menuBackdrop.addEventListener('click', (e) => {
+            if (e.target === menuBackdrop) closeMobileMenu();
+        });
+
+        // Parallax interactive hover effect on profile portrait
+        const portraitWrapper = document.getElementById('portrait-wrapper');
+        if (portraitWrapper) {
+            const imageCard = portraitWrapper.querySelector('div');
+            portraitWrapper.addEventListener('mousemove', (e) => {
+                const rect = portraitWrapper.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+
+                // Normalize tilt coefficients
+                const tiltX = (y / rect.height) * -12; // tilt angle around X
+                const tiltY = (x / rect.width) * 12;   // tilt angle around Y
+
+                imageCard.style.transform = `perspective(1000px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale3d(1.02, 1.02, 1.02)`;
+            });
+
+            portraitWrapper.addEventListener('mouseleave', () => {
+                imageCard.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+                imageCard.style.transition = 'transform 0.5s cubic-bezier(0.25, 1, 0.5, 1)';
+            });
+
+            portraitWrapper.addEventListener('mouseenter', () => {
+                imageCard.style.transition = 'none';
+            });
+        }
+
+        // Scroll-driven Background Animation
+        (function () {
+            const canvas = document.getElementById('scroll-canvas');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            const framesCount = 30;
+            const images = [];
+            let loadedImagesCount = 0;
+            let currentFrameIndex = -1;
+            let ticking = false;
+
+            function drawFrame(index) {
+                const img = images[index];
+                if (!img || !img.complete) return;
+
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+                const imgWidth = img.width;
+                const imgHeight = img.height;
+                const canvasWidth = canvas.width;
+                const canvasHeight = canvas.height;
+
+                const imgRatio = imgWidth / imgHeight;
+                const canvasRatio = canvasWidth / canvasHeight;
+
+                let drawWidth, drawHeight, x, y;
+
+                // Cover the viewport to fill all corners (always cover)
+                if (canvasRatio > imgRatio) {
+                    drawWidth = canvasWidth;
+                    drawHeight = canvasWidth / imgRatio;
+                    x = 0;
+                    y = (canvasHeight - drawHeight) / 2;
+                } else {
+                    drawWidth = canvasHeight * imgRatio;
+                    drawHeight = canvasHeight;
+                    x = (canvasWidth - drawWidth) / 2;
+                    y = 0;
+                }
+
+                ctx.drawImage(img, x, y, drawWidth, drawHeight);
+            }
+
+            function updateCanvas() {
+                const scrollTop = window.scrollY || document.documentElement.scrollTop;
+                const maxScrollTop = document.documentElement.scrollHeight - window.innerHeight;
+
+                if (maxScrollTop <= 0) return;
+
+                const scrollFraction = scrollTop / maxScrollTop;
+                const frameIndex = Math.min(framesCount - 1, Math.max(0, Math.round(scrollFraction * (framesCount - 1))));
+
+                if (frameIndex !== currentFrameIndex) {
+                    currentFrameIndex = frameIndex;
+                    drawFrame(currentFrameIndex);
+                }
+                ticking = false;
+            }
+
+            function onScroll() {
+                if (!ticking) {
+                    window.requestAnimationFrame(updateCanvas);
+                    ticking = true;
+                }
+            }
+
+            function onResize() {
+                if (currentFrameIndex >= 0) {
+                    drawFrame(currentFrameIndex);
+                }
+            }
+
+            window.addEventListener('scroll', onScroll, { passive: true });
+            window.addEventListener('resize', onResize);
+
+            // Initialize and preload images
+            for (let i = 0; i < framesCount; i++) {
+                const img = new Image();
+                const frameNum = String(i).padStart(2, '0');
+                img.src = `img/frames/frame_${frameNum}.jpg`;
+                img.onload = () => {
+                    loadedImagesCount++;
+                    if (i === currentFrameIndex || (i === 0 && currentFrameIndex === -1)) {
+                        currentFrameIndex = i;
+                        drawFrame(i);
+                    }
+                    if (loadedImagesCount === framesCount) {
+                        updateCanvas();
+                    }
+                };
+                images.push(img);
+            }
+        })();
+
+        // 3D Intro Loader & Logo Swipe Script
+        (function () {
+            const loader = document.getElementById('intro-loader');
+            const logoWrapper = document.getElementById('loader-logo-wrapper');
+            const loaderBar = document.getElementById('loader-bar');
+            const logoContainers = document.querySelectorAll('.logo-container');
+            
+            if (!loader) return;
+
+            // Check if already loaded in this session
+            if (sessionStorage.getItem('introLoaded') === 'true') {
+                loader.style.display = 'none';
+                document.body.classList.remove('overflow-hidden');
+                // Play swipe animation after 800ms so it expands dynamically on reload
+                setTimeout(() => {
+                    logoContainers.forEach(container => {
+                        container.classList.add('expanded');
+                    });
+                }, 800);
+                return;
+            }
+
+            // Interactive 3D cursor-tilt parallax
+            loader.addEventListener('mousemove', (e) => {
+                const rect = loader.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                
+                // Tilt logo: max rotation of 30 degrees
+                const tiltX = (y / rect.height) * -30;
+                const tiltY = (x / rect.width) * 30;
+                
+                logoWrapper.style.transform = `rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale(1.05)`;
+            });
+
+            loader.addEventListener('mouseleave', () => {
+                logoWrapper.style.transform = 'rotateX(0deg) rotateY(0deg) scale(1)';
+                logoWrapper.style.transition = 'transform 0.8s cubic-bezier(0.25, 1, 0.5, 1)';
+            });
+
+            loader.addEventListener('mouseenter', () => {
+                logoWrapper.style.transition = 'none';
+            });
+
+            // Simulate progress to 100%
+            let progress = 0;
+            const interval = setInterval(() => {
+                progress += Math.floor(Math.random() * 15) + 5;
+                if (progress >= 100) {
+                    progress = 100;
+                    clearInterval(interval);
+                    
+                    // Exit Transition
+                    setTimeout(() => {
+                        // Scale up and fade out loader
+                        loader.style.transform = 'scale(1.08)';
+                        loader.classList.add('opacity-0', 'pointer-events-none');
+                        
+                        // Enable scroll
+                        document.body.classList.remove('overflow-hidden');
+                        
+                        // Save session state
+                        sessionStorage.setItem('introLoaded', 'true');
+
+                        // Trigger logo swipe expansion after loader has completely faded out (1000ms transition)
+                        setTimeout(() => {
+                            logoContainers.forEach(container => {
+                                container.classList.add('expanded');
+                            });
+                        }, 1000);
+                    }, 500);
+                }
+                if (loaderBar) loaderBar.style.width = `${progress}%`;
+            }, 100);
+        })();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,1427 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Resume | Rahul Ravindran</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet"/>
+    <!-- Material Symbols -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error-container": "#ffdad6",
+                        "tertiary": "#f8f5f5",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "background": "#121414",
+                        "on-tertiary-fixed-variant": "#474746",
+                        "on-primary-container": "#7e22ce",
+                        "surface-container-low": "#1a1c1c",
+                        "inverse-primary": "#7e22ce",
+                        "on-background": "#e3e2e2",
+                        "surface-dim": "#121414",
+                        "inverse-on-surface": "#2f3131",
+                        "tertiary-fixed": "#e5e2e1",
+                        "surface-container-highest": "#343535",
+                        "primary": "#f3e8ff",
+                        "surface-tint": "#9333ea",
+                        "secondary-container": "#4a4949",
+                        "error-container": "#93000a",
+                        "on-error": "#690005",
+                        "surface-container-lowest": "#0d0e0f",
+                        "on-primary-fixed-variant": "#6b21a8",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "surface-container-high": "#292a2a",
+                        "on-tertiary": "#303030",
+                        "surface-variant": "#343535",
+                        "on-primary": "#00363a",
+                        "inverse-surface": "#e3e2e2",
+                        "on-tertiary-fixed": "#1b1b1c",
+                        "secondary": "#c8c6c5",
+                        "surface-container": "#1e2020",
+                        "surface-bright": "#383939",
+                        "secondary-fixed": "#e5e2e1",
+                        "error": "#ffb4ab",
+                        "on-primary-fixed": "#120024",
+                        "on-secondary-container": "#bab8b7",
+                        "outline": "#849495",
+                        "on-tertiary-container": "#5f5e5e",
+                        "outline-variant": "#3b494b",
+                        "primary-fixed": "#c084fc",
+                        "tertiary-container": "#dcd9d8",
+                        "surface": "#121414",
+                        "primary-fixed-dim": "#9333ea",
+                        "on-surface": "#e3e2e2",
+                        "on-surface-variant": "#b9cacb",
+                        "primary-container": "#d8b4fe",
+                        "on-secondary-fixed-variant": "#474646",
+                        "on-secondary": "#313030"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-x-mobile": "20px",
+                        "base": "8px",
+                        "margin-x-desktop": "32px",
+                        "container-max": "1400px",
+                        "gutter": "24px",
+                        "section-gap": "160px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "label-sm": ["JetBrains Mono"],
+                        "body-md": ["Inter"],
+                        "display-lg": ["Montserrat"],
+                        "headline-md": ["Montserrat"],
+                        "display-lg-mobile": ["Montserrat"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "display-lg-mobile": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(20px);
+            border: 1px border;
+            border-color: rgba(59, 73, 75, 0.2);
+            transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+        .glass-card:hover {
+            border-color: rgba(147, 51, 234, 0.3);
+            background: rgba(255, 255, 255, 0.04);
+        }
+        
+        /* Print Styles */
+        @media print {
+            @page {
+                size: A4 portrait;
+                margin: 0;
+            }
+            body {
+                background: #ffffff !important;
+                color: #000000 !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            header, footer, #print-controls, #mobile-menu-toggle, .no-print, #resume-intro {
+                display: none !important;
+            }
+            main {
+                padding: 0 !important;
+                margin: 0 !important;
+                max-width: none !important;
+                width: 100% !important;
+                height: 100% !important;
+            }
+            #resume-paper {
+                border: none !important;
+                box-shadow: none !important;
+                border-radius: 0 !important;
+                width: 210mm !important;
+                height: 297mm !important;
+                display: flex !important;
+                flex-direction: row !important;
+                overflow: hidden !important;
+                background-color: #ffffff !important;
+                position: fixed !important;
+                top: 0 !important;
+                left: 0 !important;
+                box-sizing: border-box !important;
+            }
+            #resume-left-col {
+                width: 32% !important;
+                background-color: #354F52 !important;
+                color: #ffffff !important;
+                padding: 16px 14px !important;
+                box-sizing: border-box !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                display: flex !important;
+                flex-direction: column !important;
+            }
+            #resume-left-col .mb-8 {
+                margin-bottom: 12px !important;
+            }
+            #resume-left-col .pb-6 {
+                padding-bottom: 10px !important;
+            }
+            #resume-left-col .mb-6 {
+                margin-bottom: 10px !important;
+            }
+            #resume-left-col .space-y-4 > :not([hidden]) ~ :not([hidden]) {
+                margin-top: 6px !important;
+            }
+            #resume-left-col .space-y-6 > :not([hidden]) ~ :not([hidden]) {
+                margin-top: 10px !important;
+            }
+            #resume-right-col {
+                width: 68% !important;
+                background-color: #ffffff !important;
+                color: #1c1b1b !important;
+                display: flex !important;
+                flex-direction: column !important;
+                box-sizing: border-box !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            .resume-header {
+                background-color: #7F9C96 !important;
+                color: #ffffff !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                min-height: 120px !important;
+                padding-top: 16px !important;
+                padding-bottom: 16px !important;
+                display: flex !important;
+                align-items: center !important;
+            }
+            .resume-body {
+                padding: 16px 20px !important;
+            }
+            .resume-body > :not([hidden]) ~ :not([hidden]) {
+                margin-top: 10px !important;
+            }
+            .resume-body .space-y-3 > :not([hidden]) ~ :not([hidden]) {
+                margin-top: 6px !important;
+            }
+            .resume-body .space-y-2 > :not([hidden]) ~ :not([hidden]) {
+                margin-top: 4px !important;
+            }
+            /* Adjust text sizes for high quality print */
+            h2, h3, h4, span, p, a, div, li {
+                box-shadow: none !important;
+                text-shadow: none !important;
+            }
+            /* Ensure background colors print correctly on Chrome/Safari/Firefox */
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+        }
+    
+        /* Brand logo swipe animation */
+        .logo-container {
+            display: inline-flex !important;
+            align-items: center;
+        }
+        @media (min-width: 768px) {
+            .logo-container {
+                min-width: 280px;
+            }
+        }
+
+        .logo-swipe {
+            max-width: 0;
+            opacity: 0;
+            display: inline-block;
+            white-space: nowrap;
+            transition: max-width 1.2s cubic-bezier(0.77, 0, 0.175, 1), opacity 0.8s ease;
+        }
+
+        .logo-space {
+            max-width: 0;
+            opacity: 0;
+            display: inline-block;
+            white-space: nowrap;
+            transition: max-width 1.2s cubic-bezier(0.77, 0, 0.175, 1), opacity 0.8s ease;
+        }
+
+        .logo-container:hover .logo-swipe,
+        .logo-container.expanded .logo-swipe {
+            max-width: 300px;
+            opacity: 1;
+        }
+
+        .logo-container:hover .logo-space,
+        .logo-container.expanded .logo-space {
+            max-width: 12px;
+            opacity: 1;
+        }
+        
+        .timeline-detail {
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            margin-top: 0;
+            padding-top: 0;
+            border-top: 1px solid transparent;
+            transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
+                        opacity 0.3s ease, 
+                        margin-top 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
+                        padding-top 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                        border-color 0.4s ease;
+        }
+        .timeline-detail.expanded {
+            max-height: 400px;
+            opacity: 1;
+            margin-top: 0.5rem;
+            padding-top: 1rem;
+            border-top-color: rgba(59, 73, 75, 0.15);
+        }
+
+        /* Dynamic Transition Keyframes */
+        @keyframes drapeReveal {
+            from {
+                clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+                transform: translateY(-30px);
+                opacity: 0;
+            }
+            to {
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        .animate-drape {
+            opacity: 0;
+            animation: drapeReveal 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+        }
+
+        @keyframes fallOverReveal {
+            from {
+                transform: perspective(1000px) rotateX(-90deg);
+                transform-origin: top center;
+                opacity: 0;
+            }
+            to {
+                transform: perspective(1000px) rotateX(0deg);
+                transform-origin: top center;
+                opacity: 1;
+            }
+        }
+        .animate-fall-over {
+            opacity: 0;
+            animation: fallOverReveal 0.9s cubic-bezier(0.175, 0.885, 0.32, 1.1) forwards;
+        }
+
+        @keyframes crushReveal {
+            0% {
+                transform: scale(1.5) scaleY(0.1);
+                filter: blur(10px);
+                opacity: 0;
+            }
+            60% {
+                transform: scale(0.9) scaleY(1.15);
+                filter: blur(0);
+                opacity: 0.9;
+            }
+            80% {
+                transform: scale(1.05) scaleY(0.95);
+                opacity: 0.95;
+            }
+            100% {
+                transform: scale(1) scaleY(1);
+                opacity: 1;
+            }
+        }
+        .animate-crush {
+            opacity: 0;
+            animation: crushReveal 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.15) forwards;
+        }
+
+        @keyframes flyInIcon {
+            0% {
+                transform: translateX(-80px) rotate(-360deg) scale(0.2);
+                opacity: 0;
+            }
+            70% {
+                transform: translateX(8px) rotate(20deg) scale(1.2);
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateX(0) rotate(0) scale(1);
+                opacity: 1;
+            }
+        }
+        .animate-fly-icon {
+            opacity: 0;
+            display: inline-block;
+            animation: flyInIcon 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.25) forwards;
+        }
+
+        @keyframes fadeInText {
+            from {
+                opacity: 0;
+                transform: translateX(12px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        .animate-fade-text {
+            opacity: 0;
+            display: inline-block;
+            animation: fadeInText 0.6s ease-out forwards;
+        }
+</style>
+</head>
+<body class="bg-background text-on-background font-body-md overflow-x-hidden">
+
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md dark:bg-background/80 border-b border-outline-variant/20">
+    <nav class="flex justify-between items-center h-20 px-margin-x-mobile md:px-margin-x-desktop max-w-container-max mx-auto">
+        <a class="logo-container font-display-lg text-headline-md tracking-tighter text-on-background dark:text-on-background" href="index.html">
+            <img src="img/RR_logo.png" alt="RR Logo" class="h-9 w-auto object-contain mr-2 filter drop-shadow-[0_0_8px_rgba(147,51,234,0.35)]">
+            <span class="logo-letter">R</span><span class="logo-swipe text-white overflow-hidden">ahul</span><span class="logo-space overflow-hidden">&nbsp;</span><span class="logo-letter">R</span><span class="logo-swipe text-white overflow-hidden">avindran</span>
+        </a>
+        
+        <!-- Desktop Nav -->
+        <ul class="hidden md:flex gap-10">
+            <li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary-fixed-dim transition-colors duration-300" href="index.html">Home</a></li>
+            <li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary-fixed-dim transition-colors duration-300" href="projects.html">Projects</a></li>
+            <li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary-fixed-dim transition-colors duration-300" href="about.html">About</a></li>
+            <li><a class="font-body-md text-body-md text-primary-fixed-dim font-bold border-b-2 border-primary-fixed-dim pb-1 transition-colors duration-300" href="resume.html">Resume</a></li>
+            <li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary-fixed-dim transition-colors duration-300" href="contact.html">Contact</a></li>
+        </ul>
+        
+        <a href="contact.html" class="hidden md:block bg-purple-600 text-white px-6 py-3 rounded-full font-bold text-sm uppercase tracking-wider active:opacity-80 active:scale-95 transition-all text-center outer-glow">
+                Let's Talk
+        </a>
+
+        <!-- Mobile Menu Toggle -->
+        <button class="md:hidden text-on-background focus:outline-none" id="mobile-menu-toggle" aria-label="Toggle Menu">
+            <span class="material-symbols-outlined text-3xl">menu</span>
+        </button>
+    </nav>
+</header>
+
+<!-- Mobile Navigation Drawer -->
+<div class="fixed inset-0 z-50 transition-opacity duration-300 pointer-events-none opacity-0" id="mobile-menu-backdrop">
+    <div class="absolute inset-0 bg-background/60 backdrop-blur-sm"></div>
+    <div class="absolute right-0 top-0 w-80 h-full bg-surface-container border-l border-outline-variant/30 flex flex-col p-8 transition-transform duration-300 transform translate-x-full shadow-2xl" id="mobile-menu-drawer">
+        <div class="flex justify-between items-center mb-12">
+            <span class="logo-container font-display-lg text-headline-md tracking-tighter text-on-background">
+                <img src="img/RR_logo.png" alt="RR Logo" class="h-9 w-auto object-contain mr-2 filter drop-shadow-[0_0_8px_rgba(147,51,234,0.35)]">
+                <span class="logo-letter">R</span><span class="logo-swipe text-white overflow-hidden">ahul</span><span class="logo-space overflow-hidden">&nbsp;</span><span class="logo-letter">R</span><span class="logo-swipe text-white overflow-hidden">avindran</span>
+            </span>
+            <button class="text-on-background focus:outline-none" id="mobile-menu-close" aria-label="Close Menu">
+                <span class="material-symbols-outlined text-3xl">close</span>
+            </button>
+        </div>
+        <ul class="flex flex-col gap-6 text-xl">
+            <li><a class="font-body-lg text-on-surface-variant hover:text-primary-fixed-dim transition-colors duration-300 block py-2 pl-4" href="index.html">Home</a></li>
+            <li><a class="font-body-lg text-on-surface-variant hover:text-primary-fixed-dim transition-colors duration-300 block py-2 pl-4" href="projects.html">Projects</a></li>
+            <li><a class="font-body-lg text-on-surface-variant hover:text-primary-fixed-dim transition-colors duration-300 block py-2 pl-4" href="about.html">About</a></li>
+            <li><a class="font-body-lg text-primary-fixed-dim font-bold transition-colors duration-300 block py-2 border-l-4 border-primary-fixed-dim pl-4" href="resume.html">Resume</a></li>
+            <li><a class="font-body-lg text-on-surface-variant hover:text-primary-fixed-dim transition-colors duration-300 block py-2 pl-4" href="contact.html">Contact</a></li>
+        </ul>
+        <div class="mt-auto">
+            <a href="contact.html" class="w-full block bg-primary-fixed-dim text-on-primary-fixed py-4 rounded-full font-label-sm text-center active:opacity-80 active:scale-95 transition-all shadow-lg shadow-primary/10">
+                Let's Talk
+            </a>
+        </div>
+    </div>
+</div>
+
+<main class="pt-32 pb-section-gap max-w-container-max mx-auto px-4 md:px-margin-x-desktop">
+    <!-- Hero / Title -->
+    <section class="mb-16 flex flex-col md:flex-row justify-between items-start md:items-end gap-6" id="resume-intro">
+        <div>
+            <h1 class="font-display-lg text-display-lg-mobile md:text-display-lg mb-6">Online <span class="text-primary-fixed-dim">Resume</span></h1>
+            <p class="font-body-lg text-body-lg max-w-2xl text-on-surface-variant">
+                Computer Science &amp; Engineering student specializing in the intersection of hardware automation, intelligent systems and software engineering.
+            </p>
+        </div>
+        
+        <!-- Print / PDF Action Panel -->
+        <div class="flex gap-4 no-print" id="print-controls">
+            <button class="px-6 py-3 border border-outline-variant/30 text-on-background hover:border-primary-fixed-dim/30 hover:text-primary-fixed-dim font-bold text-sm uppercase tracking-wider rounded-full flex items-center gap-2 transition-all active:scale-95" onclick="window.print()">
+                <span class="material-symbols-outlined text-[18px]">print</span>
+                Print Resume
+            </button>
+            <button class="px-6 py-3 bg-primary-fixed-dim text-on-primary-fixed hover:scale-105 hover:shadow-lg hover:shadow-primary/10 font-bold text-sm uppercase tracking-wider rounded-full flex items-center gap-2 transition-all active:scale-95" id="download-pdf-btn">
+                <span class="material-symbols-outlined text-[18px]">download</span>
+                Download PDF
+            </button>
+        </div>
+    </section>
+
+    <!-- Simulated Download Modal -->
+    <div class="fixed inset-0 z-50 flex items-center justify-center pointer-events-none opacity-0 transition-all duration-300 no-print" id="download-modal">
+        <div class="absolute inset-0 bg-background/80 backdrop-blur-md"></div>
+        <div class="glass-card max-w-md w-full p-8 rounded-2xl relative z-10 border border-primary-fixed-dim/30 shadow-2xl flex flex-col items-center text-center gap-6">
+            <div class="relative w-16 h-16 flex items-center justify-center">
+                <!-- SVG circular loader -->
+                <svg class="absolute inset-0 w-full h-full transform -rotate-95" viewBox="0 0 36 36">
+                    <path class="text-surface-container-highest" stroke-width="3" stroke="currentColor" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                    <path class="text-primary-fixed-dim transition-all duration-300" id="loader-circle" stroke-dasharray="0, 100" stroke-width="3" stroke-linecap="round" stroke="currentColor" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                </svg>
+                <span class="material-symbols-outlined text-primary-fixed-dim text-3xl" id="loader-icon">hourglass_top</span>
+            </div>
+            <div>
+                <h3 class="font-headline-md text-xl font-bold mb-2" id="loader-status">Compiling Vector Assets...</h3>
+                <p class="font-body-md text-xs text-on-surface-variant" id="loader-sub">Preparing high-definition layout engines...</p>
+            </div>
+            <div class="w-full bg-surface-container rounded-full h-1.5 overflow-hidden">
+                <div class="h-full bg-primary-fixed-dim w-0 transition-all duration-300" id="loader-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Screen Version: Original Dark, Interactive Layout (Hidden in Print) -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 mt-12 no-print">
+        <!-- Left: Work History Timeline, Education & Projects (8 cols) -->
+        <section class="lg:col-span-8 space-y-16">
+            
+            <!-- Experience Timeline Section -->
+            <div>
+                <h2 class="font-headline-md text-2xl mb-8 flex items-center gap-3">
+                    <span class="material-symbols-outlined text-primary-fixed-dim text-3xl">work</span>
+                    Professional Experience &amp; Internships
+                </h2>
+                
+                <div class="space-y-6">
+                    <!-- Professional Experience -->
+                    <div class="glass-card internship-card p-6 rounded-xl border border-outline-variant/15 flex flex-col gap-4 relative overflow-hidden group cursor-pointer" onclick="toggleTimelineDetail('zeony-detail')">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-center gap-2">
+                            <div>
+                                <h3 class="font-headline-md text-xl text-on-background group-hover:text-primary-fixed-dim transition-colors">ZEONY TECHNOLOGIES</h3>
+                                <span class="font-body-md text-sm text-primary-fixed-dim font-semibold">Hosur &bull; Professional Experience &bull; Executive Officer</span>
+                            </div>
+                        </div>
+                        <p class="font-body-md text-sm text-on-surface-variant">
+                            Directing software web applications, software engineering and interactive UI/UX/graphic designs. Click to view key areas of contribution.
+                        </p>
+                        <!-- Collapsible Bullet points -->
+                        <div class="timeline-detail flex flex-col gap-2 font-body-md text-xs text-on-surface-variant" id="zeony-detail">
+                            <div class="flex gap-2 items-start">
+                                <span class="material-symbols-outlined text-primary-fixed-dim text-sm mt-0.5">check_circle</span>
+                                <span>WEBSITE &amp; WEB APPLICATION DEVELOPMENT</span>
+                            </div>
+                            <div class="flex gap-2 items-start">
+                                <span class="material-symbols-outlined text-primary-fixed-dim text-sm mt-0.5">check_circle</span>
+                                <span>SOFTWARE ENGINEERING SOLUTIONS</span>
+                            </div>
+                            <div class="flex gap-2 items-start">
+                                <span class="material-symbols-outlined text-primary-fixed-dim text-sm mt-0.5">check_circle</span>
+                                <span>UI/UX INTERFACE DESIGN</span>
+                            </div>
+                            <div class="flex gap-2 items-start">
+                                <span class="material-symbols-outlined text-primary-fixed-dim text-sm mt-0.5">check_circle</span>
+                                <span>GRAPHIC DESIGN &amp; BRANDING ASSETS</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center text-xs font-label-sm text-primary-fixed-dim/70 group-hover:text-primary-fixed-dim transition-colors mt-2">
+                            <span id="zeony-detail-trigger">Click to expand details</span>
+                            <span class="material-symbols-outlined transform transition-transform group-hover:translate-y-0.5" id="zeony-detail-icon">expand_more</span>
+                        </div>
+                    </div>
+                    <!-- Internship 1 -->
+                    <div class="glass-card internship-card p-6 rounded-xl border border-outline-variant/15 flex flex-col gap-4 relative overflow-hidden group cursor-pointer" onclick="toggleTimelineDetail('illuminen-detail')">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-center gap-2">
+                            <div>
+                                <h3 class="font-headline-md text-xl text-on-background group-hover:text-primary-fixed-dim transition-colors">ILLUMINEN TECHNOLOGIES PRIVATE LIMITED</h3>
+                                <span class="font-body-md text-sm text-primary-fixed-dim font-semibold">Coimbatore &bull; Internship</span>
+                            </div>
+                        </div>
+                        <p class="font-body-md text-sm text-on-surface-variant">
+                            Hands-on industrial training in hardware testing and design automation. Click to view key areas of contribution.
+                        </p>
+                        <!-- Collapsible Bullet points -->
+                        <div class="timeline-detail flex flex-col gap-2 font-body-md text-xs text-on-surface-variant" id="illuminen-detail">
+                            <div class="flex gap-2 items-start">
+                                <span class="material-symbols-outlined text-primary-fixed-dim text-sm mt-0.5">check_circle</span>
+                                <span>TEXTILE JACQUARD CONTROLLER TESTING</span>
+                            </div>
+                            <div class="flex gap-2 items-start">
+                                <span class="material-symbols-outlined text-primary-fixed-dim text-sm mt-0.5">check_circle</span>
+                                <span>CEIL CARD AND SOLDERING</span>
+                            </div>
+                            <div class="flex gap-2 items-start">
+                                <span class="material-symbols-outlined text-primary-fixed-dim text-sm mt-0.5">check_circle</span>
+                                <span>ALTIUM PROGRAMMER (BASIC)</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center text-xs font-label-sm text-primary-fixed-dim/70 group-hover:text-primary-fixed-dim transition-colors mt-2">
+                            <span id="illuminen-detail-trigger">Click to expand details</span>
+                            <span class="material-symbols-outlined transform transition-transform group-hover:translate-y-0.5" id="illuminen-detail-icon">expand_more</span>
+                        </div>
+                    </div>
+
+                    <!-- Internship 2 -->
+                    <div class="glass-card internship-card p-6 rounded-xl border border-outline-variant/15 flex flex-col gap-4 relative overflow-hidden group cursor-pointer" onclick="toggleTimelineDetail('codebind-detail')">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-center gap-2">
+                            <div>
+                                <h3 class="font-headline-md text-xl text-on-background group-hover:text-primary-fixed-dim transition-colors">CODE BIND TECHNOLOGIES</h3>
+                                <span class="font-body-md text-sm text-primary-fixed-dim font-semibold">T-Nagar, Chennai &bull; Internship</span>
+                            </div>
+                        </div>
+                        <p class="font-body-md text-sm text-on-surface-variant">
+                            Explored software web applications and AI tools integration. Click to view key areas of contribution.
+                        </p>
+                        <!-- Collapsible Bullet points -->
+                        <div class="timeline-detail flex flex-col gap-2 font-body-md text-xs text-on-surface-variant" id="codebind-detail">
+                            <div class="flex gap-2 items-start">
+                                <span class="material-symbols-outlined text-primary-fixed-dim text-sm mt-0.5">check_circle</span>
+                                <span>WEB DEVELOPMENT IN ONLINE SHOPPING</span>
+                            </div>
+                            <div class="flex gap-2 items-start">
+                                <span class="material-symbols-outlined text-primary-fixed-dim text-sm mt-0.5">check_circle</span>
+                                <span>ARTIFICIAL INTELLIGENCE WORKSHOP</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center text-xs font-label-sm text-primary-fixed-dim/70 group-hover:text-primary-fixed-dim transition-colors mt-2">
+                            <span id="codebind-detail-trigger">Click to expand details</span>
+                            <span class="material-symbols-outlined transform transition-transform group-hover:translate-y-0.5" id="codebind-detail-icon">expand_more</span>
+                        </div>
+                    </div>
+
+                    <!-- Internship 3 -->
+                    <div class="glass-card internship-card p-6 rounded-xl border border-outline-variant/15 flex flex-col gap-4 relative overflow-hidden group cursor-pointer" onclick="toggleTimelineDetail('gwc-detail')">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-center gap-2">
+                            <div>
+                                <h3 class="font-headline-md text-xl text-on-background group-hover:text-primary-fixed-dim transition-colors">GWC DATA.AI SOLUTION MATTERS</h3>
+                                <span class="font-body-md text-sm text-primary-fixed-dim font-semibold">Hosur &bull; Internship</span>
+                            </div>
+                        </div>
+                        <p class="font-body-md text-sm text-on-surface-variant">
+                            Acquired fundamental skills in data analytics and programming. Click to view key areas of contribution.
+                        </p>
+                        <!-- Collapsible Bullet points -->
+                        <div class="timeline-detail flex flex-col gap-2 font-body-md text-xs text-on-surface-variant" id="gwc-detail">
+                            <div class="flex gap-2 items-start">
+                                <span class="material-symbols-outlined text-primary-fixed-dim text-sm mt-0.5">check_circle</span>
+                                <span>BASICS OF POWER-BI</span>
+                            </div>
+                            <div class="flex gap-2 items-start">
+                                <span class="material-symbols-outlined text-primary-fixed-dim text-sm mt-0.5">check_circle</span>
+                                <span>BASICS OF PYTHON</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center text-xs font-label-sm text-primary-fixed-dim/70 group-hover:text-primary-fixed-dim transition-colors mt-2">
+                            <span id="gwc-detail-trigger">Click to expand details</span>
+                            <span class="material-symbols-outlined transform transition-transform group-hover:translate-y-0.5" id="gwc-detail-icon">expand_more</span>
+                        </div>
+                    </div>
+
+                    <!-- Internship 4 -->
+                    <div class="glass-card internship-card p-6 rounded-xl border border-outline-variant/15 flex flex-col gap-4 relative overflow-hidden group cursor-pointer" onclick="toggleTimelineDetail('titan-detail')">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-center gap-2">
+                            <div>
+                                <h3 class="font-headline-md text-xl text-on-background group-hover:text-primary-fixed-dim transition-colors">TITAN COMPANY LIMITED</h3>
+                                <span class="font-body-md text-sm text-primary-fixed-dim font-semibold">Hosur &bull; Internship</span>
+                            </div>
+                        </div>
+                        <p class="font-body-md text-sm text-on-surface-variant">
+                            Immersive layout training in industrial systems and electronic departments. Click to view details.
+                        </p>
+                        <!-- Collapsible Bullet points -->
+                        <div class="timeline-detail flex flex-col gap-2 font-body-md text-xs text-on-surface-variant" id="titan-detail">
+                            <div class="flex gap-2 items-start">
+                                <span class="material-symbols-outlined text-primary-fixed-dim text-sm mt-0.5">check_circle</span>
+                                <span>DIGITAL DEPARTMENT operations and layout control systems</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center text-xs font-label-sm text-primary-fixed-dim/70 group-hover:text-primary-fixed-dim transition-colors mt-2">
+                            <span id="titan-detail-trigger">Click to expand details</span>
+                            <span class="material-symbols-outlined transform transition-transform group-hover:translate-y-0.5" id="titan-detail-icon">expand_more</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Education Section -->
+            <div>
+                <h2 class="font-headline-md text-2xl mb-8 flex items-center gap-3">
+                    <span class="material-symbols-outlined text-primary-fixed-dim text-3xl">school</span>
+                    Education
+                </h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="glass-card edu-card p-6 rounded-xl border border-outline-variant/15 flex flex-col gap-2">
+                        <span class="font-label-sm text-primary-fixed-dim text-xs font-bold uppercase tracking-wider">2026 — 2028</span>
+                        <h3 class="font-headline-md text-lg text-on-background font-bold">M.Tech. Computer Science &amp; Engineering</h3>
+                        <p class="font-body-md text-sm text-on-surface-variant">Amrita Vishwa Vidyapeetham, Chennai</p>
+                        <p class="font-body-md text-xs text-primary-fixed-dim font-bold mt-2">Currently Pursuing</p>
+                    </div>
+
+                    <div class="glass-card edu-card p-6 rounded-xl border border-outline-variant/15 flex flex-col gap-2">
+                        <span class="font-label-sm text-primary-fixed-dim text-xs font-bold uppercase tracking-wider">2023 — 2026</span>
+                        <h3 class="font-headline-md text-lg text-on-background font-bold">B.E. Computer Science &amp; Eng.</h3>
+                        <p class="font-body-md text-sm text-on-surface-variant">Er. Perumal Manimekalai College of Engineering, Hosur</p>
+                        <p class="font-body-md text-xs text-primary-fixed-dim font-bold mt-2">7.66 CGPA</p>
+                    </div>
+
+                    <div class="glass-card edu-card p-6 rounded-xl border border-outline-variant/15 flex flex-col gap-2">
+                        <span class="font-label-sm text-primary-fixed-dim text-xs font-bold uppercase tracking-wider">2020 — 2023</span>
+                        <h3 class="font-headline-md text-lg text-on-background font-bold">Diploma in Electrical &amp; Electronics</h3>
+                        <p class="font-body-md text-sm text-on-surface-variant">Rajagopal Polytechnic College, Gudiyatham</p>
+                        <p class="font-body-md text-xs text-primary-fixed-dim font-bold mt-2">85%</p>
+                    </div>
+
+                    <div class="glass-card edu-card p-6 rounded-xl border border-outline-variant/15 flex flex-col gap-2">
+                        <span class="font-label-sm text-primary-fixed-dim text-xs font-bold uppercase tracking-wider">2019 — 2020</span>
+                        <h3 class="font-headline-md text-lg text-on-background font-bold">SSLC</h3>
+                        <p class="font-body-md text-sm text-on-surface-variant">Maharishi Higher Secondary School, Chengam</p>
+                        <p class="font-body-md text-xs text-primary-fixed-dim font-bold mt-2">87%</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Projects Section -->
+            <div>
+                <h2 class="font-headline-md text-2xl mb-8 flex items-center gap-3">
+                    <span class="material-symbols-outlined text-primary-fixed-dim text-3xl">terminal</span>
+                    Projects
+                </h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="glass-card project-card p-6 rounded-xl border border-outline-variant/15 flex flex-col gap-3">
+                        <h3 class="font-headline-md text-lg text-on-background font-bold uppercase">FWAPMS</h3>
+                        <span class="font-body-md text-xs text-primary-fixed-dim font-semibold">Web Development</span>
+                        <p class="font-body-md text-sm text-on-surface-variant">
+                            Website for Faculty Work Assessment Progression Management System.
+                        </p>
+                    </div>
+
+                    <div class="glass-card project-card p-6 rounded-xl border border-outline-variant/15 flex flex-col gap-3">
+                        <h3 class="font-headline-md text-lg text-on-background font-bold uppercase">AI Face Attendance</h3>
+                        <span class="font-body-md text-xs text-primary-fixed-dim font-semibold">Artificial Intelligence</span>
+                        <p class="font-body-md text-sm text-on-surface-variant">
+                            Smart attendance capturing using artificial intelligence facial recognition algorithms.
+                        </p>
+                    </div>
+
+                    <div class="glass-card project-card p-6 rounded-xl border border-outline-variant/15 flex flex-col gap-3">
+                        <h3 class="font-headline-md text-lg text-on-background font-bold uppercase">PLC Based Bank Locker</h3>
+                        <span class="font-body-md text-xs text-primary-fixed-dim font-semibold">Automation &amp; Hardware Controls</span>
+                        <p class="font-body-md text-sm text-on-surface-variant">
+                            Developed a secure bank locker system using WPSL software for password creation and hardware control.
+                        </p>
+                    </div>
+
+                    <div class="glass-card project-card p-6 rounded-xl border border-outline-variant/15 flex flex-col gap-3">
+                        <h3 class="font-headline-md text-lg text-on-background font-bold uppercase">Sales Dashboard</h3>
+                        <span class="font-body-md text-xs text-primary-fixed-dim font-semibold">Data Analytics &amp; Visualization</span>
+                        <p class="font-body-md text-sm text-on-surface-variant">
+                            Built an Excel-based interactive dashboard for tracking, sorting and analyzing sales trends.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Right: Skills, Certifications & Personal Info (4 cols) -->
+        <section class="lg:col-span-4 space-y-12">
+            
+            <!-- Skill Bars Grid -->
+            <div class="glass-card p-8 rounded-xl border border-outline-variant/15 flex flex-col gap-6">
+                <h3 class="font-label-sm text-primary-fixed-dim uppercase tracking-widest font-bold border-b border-outline-variant/15 pb-4">Skills &amp; Tools</h3>
+                
+                <div class="space-y-4">
+                    <!-- MS Office -->
+                    <div class="space-y-2 skill-item" data-target="90">
+                        <div class="flex justify-between items-center text-sm">
+                            <span class="font-bold text-on-background">MS Office</span>
+                            <span class="text-primary-fixed-dim font-bold skill-percentage">0%</span>
+                        </div>
+                        <div class="w-full bg-surface-container rounded-full h-1.5 overflow-hidden">
+                            <div class="h-full bg-primary-fixed-dim rounded-full transition-all duration-1000 skill-bar" style="width: 0%;"></div>
+                        </div>
+                    </div>
+
+                    <!-- AutoCAD -->
+                    <div class="space-y-2 skill-item" data-target="85">
+                        <div class="flex justify-between items-center text-sm">
+                            <span class="font-bold text-on-background">AutoCAD 2007</span>
+                            <span class="text-primary-fixed-dim font-bold skill-percentage">0%</span>
+                        </div>
+                        <div class="w-full bg-surface-container rounded-full h-1.5 overflow-hidden">
+                            <div class="h-full bg-primary-fixed-dim rounded-full transition-all duration-1000 skill-bar" style="width: 0%;"></div>
+                        </div>
+                    </div>
+
+                    <!-- Simulation Software -->
+                    <div class="space-y-2 skill-item" data-target="80">
+                        <div class="flex justify-between items-center text-sm">
+                            <span class="font-bold text-on-background">Simulation Software</span>
+                            <span class="text-primary-fixed-dim font-bold skill-percentage">0%</span>
+                        </div>
+                        <div class="w-full bg-surface-container rounded-full h-1.5 overflow-hidden">
+                            <div class="h-full bg-primary-fixed-dim rounded-full transition-all duration-1000 skill-bar" style="width: 0%;"></div>
+                        </div>
+                    </div>
+
+                    <!-- WPSL -->
+                    <div class="space-y-2 skill-item" data-target="75">
+                        <div class="flex justify-between items-center text-sm">
+                            <span class="font-bold text-on-background">WPSL</span>
+                            <span class="text-primary-fixed-dim font-bold skill-percentage">0%</span>
+                        </div>
+                        <div class="w-full bg-surface-container rounded-full h-1.5 overflow-hidden">
+                            <div class="h-full bg-primary-fixed-dim rounded-full transition-all duration-1000 skill-bar" style="width: 0%;"></div>
+                        </div>
+                    </div>
+
+                    <!-- Figma -->
+                    <div class="space-y-2 skill-item" data-target="85">
+                        <div class="flex justify-between items-center text-sm">
+                            <span class="font-bold text-on-background">Figma</span>
+                            <span class="text-primary-fixed-dim font-bold skill-percentage">0%</span>
+                        </div>
+                        <div class="w-full bg-surface-container rounded-full h-1.5 overflow-hidden">
+                            <div class="h-full bg-primary-fixed-dim rounded-full transition-all duration-1000 skill-bar" style="width: 0%;"></div>
+                        </div>
+                    </div>
+
+                    <!-- VS Code -->
+                    <div class="space-y-2 skill-item" data-target="90">
+                        <div class="flex justify-between items-center text-sm">
+                            <span class="font-bold text-on-background">VS Code</span>
+                            <span class="text-primary-fixed-dim font-bold skill-percentage">0%</span>
+                        </div>
+                        <div class="w-full bg-surface-container rounded-full h-1.5 overflow-hidden">
+                            <div class="h-full bg-primary-fixed-dim rounded-full transition-all duration-1000 skill-bar" style="width: 0%;"></div>
+                        </div>
+                    </div>
+
+                    <!-- Antigravity -->
+                    <div class="space-y-2 skill-item" data-target="90">
+                        <div class="flex justify-between items-center text-sm">
+                            <span class="font-bold text-on-background">Antigravity</span>
+                            <span class="text-primary-fixed-dim font-bold skill-percentage">0%</span>
+                        </div>
+                        <div class="w-full bg-surface-container rounded-full h-1.5 overflow-hidden">
+                            <div class="h-full bg-primary-fixed-dim rounded-full transition-all duration-1000 skill-bar" style="width: 0%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Certification Courses Section -->
+            <div class="glass-card p-8 rounded-xl border border-outline-variant/15 flex flex-col gap-6">
+                <h3 class="font-label-sm text-primary-fixed-dim uppercase tracking-widest font-bold border-b border-outline-variant/15 pb-4">Certifications</h3>
+                <ul class="flex flex-col gap-3 font-medium text-xs text-on-surface-variant">
+                    <li class="flex gap-2 items-start hover:text-primary-fixed-dim transition-colors cert-item">
+                        <span class="material-symbols-outlined text-primary-fixed-dim text-sm mt-0.5 cert-icon">workspace_premium</span>
+                        <span class="cert-text">IBM SKILLBUILD - GETTING STARTED WITH DATA</span>
+                    </li>
+                    <li class="flex gap-2 items-start hover:text-primary-fixed-dim transition-colors cert-item">
+                        <span class="material-symbols-outlined text-primary-fixed-dim text-sm mt-0.5 cert-icon">workspace_premium</span>
+                        <span class="cert-text">GUVI SAWIT.AI LEARNATHON - GENERATIVE AI</span>
+                    </li>
+                    <li class="flex gap-2 items-start hover:text-primary-fixed-dim transition-colors cert-item">
+                        <span class="material-symbols-outlined text-primary-fixed-dim text-sm mt-0.5 cert-icon">workspace_premium</span>
+                        <span class="cert-text">GUVI - CHATGPT FOR EVERYONE</span>
+                    </li>
+                    <li class="flex gap-2 items-start hover:text-primary-fixed-dim transition-colors cert-item">
+                        <span class="material-symbols-outlined text-primary-fixed-dim text-sm mt-0.5 cert-icon">workspace_premium</span>
+                        <span class="cert-text">HP LIFE - AI FOR BEGINNERS</span>
+                    </li>
+                    <li class="flex gap-2 items-start hover:text-primary-fixed-dim transition-colors cert-item">
+                        <span class="material-symbols-outlined text-primary-fixed-dim text-sm mt-0.5 cert-icon">workspace_premium</span>
+                        <span class="cert-text">HP LIFE - DATA SCIENCE &amp; ANALYTICS</span>
+                    </li>
+                    <li class="flex gap-2 items-start hover:text-primary-fixed-dim transition-colors cert-item">
+                        <span class="material-symbols-outlined text-primary-fixed-dim text-sm mt-0.5 cert-icon">workspace_premium</span>
+                        <span class="cert-text">INFOSYS SPRINGBOARD - DATA SCIENCE</span>
+                    </li>
+                    <li class="flex gap-2 items-start hover:text-primary-fixed-dim transition-colors cert-item">
+                        <span class="material-symbols-outlined text-primary-fixed-dim text-sm mt-0.5 cert-icon">workspace_premium</span>
+                        <span class="cert-text">INFOSYS SPRINGBOARD - DATABASE (SQL)</span>
+                    </li>
+                    <li class="flex gap-2 items-start hover:text-primary-fixed-dim transition-colors cert-item">
+                        <span class="material-symbols-outlined text-primary-fixed-dim text-sm mt-0.5 cert-icon">workspace_premium</span>
+                        <span class="cert-text">NAAN MUTHALVAN - MICROSOFT COURSES</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Personal Information Section -->
+            <div class="glass-card p-8 rounded-xl border border-outline-variant/15 flex flex-col gap-6">
+                <h3 class="font-label-sm text-primary-fixed-dim uppercase tracking-widest font-bold border-b border-outline-variant/15 pb-4">Personal Info</h3>
+                <div class="flex flex-col gap-4 text-xs font-body-md text-on-surface-variant">
+                    <div class="flex flex-col gap-1">
+                        <span class="text-gray-500 font-bold uppercase text-[10px] tracking-wider">Father Name</span>
+                        <span class="text-on-background font-semibold">RAVINDRAN.S</span>
+                    </div>
+                    <div class="flex flex-col gap-1">
+                        <span class="text-gray-500 font-bold uppercase text-[10px] tracking-wider">DOB</span>
+                        <span class="text-on-background font-semibold">27/03/2005</span>
+                    </div>
+                    <div class="flex flex-col gap-1">
+                        <span class="text-gray-500 font-bold uppercase text-[10px] tracking-wider">Nationality</span>
+                        <span class="text-on-background font-semibold">INDIAN</span>
+                    </div>
+                    <div class="flex flex-col gap-1">
+                        <span class="text-gray-500 font-bold uppercase text-[10px] tracking-wider">Address</span>
+                        <span class="text-on-background font-semibold leading-relaxed">45, RAJAJI STREET, CHENGAM, THIRUVANAMALAI DT</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Languages Known Section -->
+            <div class="glass-card p-8 rounded-xl border border-outline-variant/15 flex flex-col gap-6">
+                <h3 class="font-label-sm text-primary-fixed-dim uppercase tracking-widest font-bold border-b border-outline-variant/15 pb-4">Languages</h3>
+                <ul class="flex flex-col gap-3 font-medium text-xs text-on-surface-variant">
+                    <li class="flex gap-2 items-center hover:text-primary-fixed-dim transition-colors">
+                        <span class="material-symbols-outlined text-primary-fixed-dim text-sm">translate</span>
+                        <span>English</span>
+                    </li>
+                    <li class="flex gap-2 items-center hover:text-primary-fixed-dim transition-colors">
+                        <span class="material-symbols-outlined text-primary-fixed-dim text-sm">translate</span>
+                        <span>Tamil</span>
+                    </li>
+                </ul>
+            </div>
+
+        </section>
+    </div>
+
+    <!-- Print Version: Dual-Column Custom Template Layout (Visible only in Print/Download) -->
+    <div class="hidden print:flex justify-center items-center py-6 w-full">
+        <!-- Paper Container (A4 Proportions forced in Print) -->
+        <div class="bg-white text-[#1C1B1B] shadow-2xl rounded-2xl overflow-hidden border border-outline-variant/15 flex flex-row w-full max-w-4xl min-h-[1100px]" id="resume-paper">
+            
+            <!-- Left Side: Dark Column (32% width) -->
+            <div class="w-[32%] bg-[#354F52] text-white p-6 flex flex-col justify-start relative left-col" id="resume-left-col">
+                <!-- Profile Image -->
+                <div class="relative w-full aspect-square border-4 border-white overflow-hidden shadow-lg mb-8 mx-auto">
+                    <img src="img/RAHUL.jpg" alt="Rahul R" class="w-full h-full object-cover">
+                </div>
+                
+                <!-- Contact Details -->
+                <div class="space-y-4 text-white text-xs border-b border-white/20 pb-6 mb-6">
+                    <div class="flex items-center gap-3">
+                        <span class="material-symbols-outlined text-yellow-500 text-lg">call</span>
+                        <span class="font-semibold text-white/90">9790256404</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="material-symbols-outlined text-yellow-500 text-lg">mail</span>
+                        <a href="mailto:rahul05.co@gmail.com" class="hover:underline font-semibold text-white/90 break-all">rahul05.co@gmail.com</a>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="material-symbols-outlined text-yellow-500 text-lg">language</span>
+                        <a href="https://www.linkedin.com/in/rahul-ravindran-886043245?utm_source=share_via&amp;utm_content=profile&amp;utm_medium=member_android" target="_blank" class="hover:underline font-semibold text-white/90 break-all">www.linkedin.com/in/rahul-ravindran-886043245</a>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="material-symbols-outlined text-yellow-500 text-lg">location_on</span>
+                        <span class="font-semibold text-white/90 uppercase">THIRUVANAMALAI</span>
+                    </div>
+                </div>
+
+                <!-- Education -->
+                <div class="space-y-6 border-b border-white/20 pb-6 mb-6">
+                    <h3 class="font-display-lg text-sm font-bold text-white uppercase tracking-wider flex items-center gap-2">
+                        EDUCATION
+                        <span class="material-symbols-outlined text-sm">school</span>
+                    </h3>
+                    <div class="space-y-4">
+                        <div class="space-y-1">
+                            <h4 class="text-xs font-bold text-yellow-400 uppercase leading-snug">M.Tech. Computer Science &amp; Engineering</h4>
+                            <p class="text-[10px] text-white/80 uppercase font-medium leading-normal">Amrita Vishwa Vidyapeetham, Chennai</p>
+                            <div class="flex justify-between text-[9px] text-white/70 font-semibold mt-1">
+                                <span>2026 – 2028</span>
+                                <span class="text-yellow-400">Currently Pursuing</span>
+                            </div>
+                        </div>
+                        <div class="space-y-1">
+                            <h4 class="text-xs font-bold text-yellow-400 uppercase leading-snug">Bachelor of Computer Science and Engineering</h4>
+                            <p class="text-[10px] text-white/80 uppercase font-medium leading-normal">Er. Perumal Manimekalai College of Engineering, Hosur</p>
+                            <div class="flex justify-between text-[9px] text-white/70 font-semibold mt-1">
+                                <span>2023 – 2026</span>
+                                <span class="text-yellow-400">7.66 CGPA</span>
+                            </div>
+                        </div>
+                        <div class="space-y-1">
+                            <h4 class="text-xs font-bold text-yellow-400 uppercase leading-snug">Diploma in Electrical and Electronics Engineering</h4>
+                            <p class="text-[10px] text-white/80 uppercase font-medium leading-normal">Rajagopal Polytechnic College, Gudiyatham</p>
+                            <div class="flex justify-between text-[9px] text-white/70 font-semibold mt-1">
+                                <span>2020 – 2023</span>
+                                <span class="text-yellow-400">85%</span>
+                            </div>
+                        </div>
+                        <div class="space-y-1">
+                            <h4 class="text-xs font-bold text-yellow-400 uppercase leading-snug">SSLC - Maharishi Higher Secondary School, Chengam</h4>
+                            <div class="flex justify-between text-[9px] text-white/70 font-semibold mt-1">
+                                <span>2019 – 2020</span>
+                                <span class="text-yellow-400">87%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Language -->
+                <div class="space-y-4">
+                    <h3 class="font-display-lg text-sm font-bold text-white uppercase tracking-wider flex items-center gap-2">
+                        LANGUAGE
+                        <span class="material-symbols-outlined text-sm">translate</span>
+                    </h3>
+                    <ul class="space-y-1 text-xs font-semibold text-white/90 pl-1">
+                        <li>English</li>
+                        <li>Tamil</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Right Side: White Column (68% width) -->
+            <div class="w-[68%] bg-white flex flex-col justify-start right-col" id="resume-right-col">
+                <!-- Sage Green Name Header -->
+                <div class="bg-[#7F9C96] px-8 py-10 flex flex-col justify-center min-h-[220px] resume-header">
+                    <h2 class="font-display-lg text-4xl md:text-5xl font-extrabold text-white tracking-widest uppercase mb-1">RAHUL R</h2>
+                </div>
+
+                <!-- Resume Details Body -->
+                <div class="p-8 space-y-6 text-[#1C1B1B] text-xs leading-relaxed resume-body">
+                    
+                    <!-- Profile Section -->
+                    <div class="space-y-2">
+                        <h3 class="text-sm font-bold text-[#354F52] uppercase tracking-wider">Profile</h3>
+                        <hr class="border-[#C5A85C] border-t-2">
+                        <p class="text-justify font-medium text-gray-700 leading-relaxed text-[11px] md:text-xs">
+                            A flexible and detail-oriented engineering student with strong hardware and software skills, seeking opportunities to apply and expand technical expertise in real-world projects.
+                        </p>
+                    </div>
+
+                    <!-- Experience Section -->
+                    <div class="space-y-3">
+                        <h3 class="text-sm font-bold text-[#354F52] uppercase tracking-wider">Professional Experience &amp; Internships</h3>
+                        <hr class="border-[#C5A85C] border-t-2">
+                        <div class="space-y-3">
+                            <div class="space-y-1">
+                                <div class="flex justify-between items-baseline">
+                                    <h4 class="font-bold text-[11px] md:text-xs uppercase text-[#1C1B1B]">ZEONY TECHNOLOGIES, HOSUR.</h4>
+                                    <span class="text-[9px] text-[#354F52] font-bold uppercase tracking-wider">Executive Officer</span>
+                                </div>
+                                <ul class="grid grid-cols-2 gap-x-4 gap-y-0.5 font-medium text-gray-700 pl-1">
+                                    <li class="flex items-center gap-1.5"><span class="text-[#354F52] font-bold text-[8px]">✦</span>WEB &amp; SOFTWARE DEVELOPMENT</li>
+                                    <li class="flex items-center gap-1.5"><span class="text-[#354F52] font-bold text-[8px]">✦</span>UI/UX INTERFACE DESIGN</li>
+                                    <li class="flex items-center gap-1.5"><span class="text-[#354F52] font-bold text-[8px]">✦</span>GRAPHIC DESIGN &amp; BRANDING</li>
+                                </ul>
+                            </div>
+                            <div class="space-y-1">
+                                <h4 class="font-bold text-[11px] md:text-xs uppercase text-[#1C1B1B]">ILLUMINEN TECHNOLOGIES PRIVATE LIMITED, COIMBATORE.</h4>
+                                <ul class="grid grid-cols-2 gap-x-4 gap-y-0.5 font-medium text-gray-700 pl-1">
+                                    <li class="flex items-center gap-1.5"><span class="text-[#354F52] font-bold text-[8px]">✦</span>TEXTILE JACQUARD CONTROLLER TESTING</li>
+                                    <li class="flex items-center gap-1.5"><span class="text-[#354F52] font-bold text-[8px]">✦</span>CEIL CARD AND SOLDRING</li>
+                                    <li class="flex items-center gap-1.5"><span class="text-[#354F52] font-bold text-[8px]">✦</span>ALTIUM PROGRAMMER (BASIC)</li>
+                                </ul>
+                            </div>
+                            <div class="space-y-1">
+                                <h4 class="font-bold text-[11px] md:text-xs uppercase text-[#1C1B1B]">CODE BIND TECHNOLOGIES,T-NAGAR, CHENNAI.</h4>
+                                <ul class="grid grid-cols-2 gap-x-4 gap-y-0.5 font-medium text-gray-700 pl-1">
+                                    <li class="flex items-center gap-1.5"><span class="text-[#354F52] font-bold text-[8px]">✦</span>WEB DEVELOPMENT IN ONLINE SHOPPING</li>
+                                    <li class="flex items-center gap-1.5"><span class="text-[#354F52] font-bold text-[8px]">✦</span>ARTIFICIAL INTELLIGENCE WORKSHOP</li>
+                                </ul>
+                            </div>
+                            <div class="space-y-1">
+                                <h4 class="font-bold text-[11px] md:text-xs uppercase text-[#1C1B1B]">GWC DATA.AI SOLUTION MATTERS, HOSUR.</h4>
+                                <ul class="grid grid-cols-2 gap-x-4 gap-y-0.5 font-medium text-gray-700 pl-1">
+                                    <li class="flex items-center gap-1.5"><span class="text-[#354F52] font-bold text-[8px]">✦</span>BASICS OF POWER-BI</li>
+                                    <li class="flex items-center gap-1.5"><span class="text-[#354F52] font-bold text-[8px]">✦</span>BASICS OF PYTHON</li>
+                                </ul>
+                            </div>
+                            <div class="space-y-1">
+                                <h4 class="font-bold text-[11px] md:text-xs uppercase text-[#1C1B1B]">TITAN COMPANY LIMITED,HOSUR</h4>
+                                <ul class="font-medium text-gray-700 pl-1">
+                                    <li class="flex items-center gap-1.5"><span class="text-[#354F52] font-bold text-[8px]">✦</span>DIGITAL DEPARTMENT</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Skills Section -->
+                    <div class="space-y-2">
+                        <h3 class="text-sm font-bold text-[#354F52] uppercase tracking-wider">Skills &amp; Tools</h3>
+                        <hr class="border-[#C5A85C] border-t-2">
+                        <ul class="flex flex-wrap gap-x-4 gap-y-1 font-semibold text-gray-800 text-[11px]">
+                            <li class="flex items-center gap-1.5"><span class="text-[#354F52] font-bold text-[8px]">✦</span>MS OFFICE</li>
+                            <li class="flex items-center gap-1.5"><span class="text-[#354F52] font-bold text-[8px]">✦</span>AUTOCAD 2007</li>
+                            <li class="flex items-center gap-1.5"><span class="text-[#354F52] font-bold text-[8px]">✦</span>SIMULATION SOFTWARE</li>
+                            <li class="flex items-center gap-1.5"><span class="text-[#354F52] font-bold text-[8px]">✦</span>WPSL</li>
+                            <li class="flex items-center gap-1.5"><span class="text-[#354F52] font-bold text-[8px]">✦</span>FIGMA</li>
+                            <li class="flex items-center gap-1.5"><span class="text-[#354F52] font-bold text-[8px]">✦</span>VS CODE</li>
+                            <li class="flex items-center gap-1.5"><span class="text-[#354F52] font-bold text-[8px]">✦</span>ANTIGRAVITY</li>
+                        </ul>
+                    </div>
+
+                    <!-- Projects Section -->
+                    <div class="space-y-3">
+                        <h3 class="text-sm font-bold text-[#354F52] uppercase tracking-wider">Project</h3>
+                        <hr class="border-[#C5A85C] border-t-2">
+                        <div class="space-y-2 text-[11px]">
+                            <div class="space-y-0.5">
+                                <h4 class="font-bold uppercase text-[#1C1B1B] flex items-start gap-1.5">
+                                    <span class="text-[#354F52] font-bold text-[8px] mt-1">✦</span>
+                                    WEBSITE FOR FACULTY WORK ASSESSMENT PROGRESSION MANAGEMENT SYSTEM (FWAPMS)
+                                </h4>
+                            </div>
+                            <div class="space-y-0.5">
+                                <h4 class="font-bold uppercase text-[#1C1B1B] flex items-start gap-1.5">
+                                    <span class="text-[#354F52] font-bold text-[8px] mt-1">✦</span>
+                                    AI FACE ATTENDANCE
+                                </h4>
+                            </div>
+                            <div class="space-y-0.5">
+                                <h4 class="font-bold uppercase text-[#1C1B1B] flex items-start gap-1.5">
+                                    <span class="text-[#354F52] font-bold text-[8px] mt-1">✦</span>
+                                    PLC BASED BANK LOCKER SYSTEM
+                                </h4>
+                                <p class="text-gray-600 font-medium pl-4">Developed a secure locker system using WPSL software for password creation and hardware control</p>
+                            </div>
+                            <div class="space-y-0.5">
+                                <h4 class="font-bold uppercase text-[#1C1B1B] flex items-start gap-1.5">
+                                    <span class="text-[#354F52] font-bold text-[8px] mt-1">✦</span>
+                                    SALES DASHBOARD PROJECT
+                                </h4>
+                                <p class="text-gray-600 font-medium pl-4">Built an Excel-based dashboard for visualizing sales data trends</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Certification Courses Section -->
+                    <div class="space-y-2">
+                        <h3 class="text-sm font-bold text-[#354F52] uppercase tracking-wider">Certification Courses</h3>
+                        <hr class="border-[#C5A85C] border-t-2">
+                        <ul class="grid grid-cols-2 gap-x-4 gap-y-0.5 font-medium text-gray-700 pl-1 text-[11px]">
+                            <li class="flex items-center gap-1.5"><span class="text-[#354F52] font-bold text-[8px]">✦</span>IBM SKILLBUILD-GETTING STARTED WITH DATA</li>
+                            <li class="flex items-center gap-1.5"><span class="text-[#354F52] font-bold text-[8px]">✦</span>GUVI SAWIT.AI LEARNATHON- FUNDAMENTALS OF GENERATIVE AI</li>
+                            <li class="flex items-center gap-1.5"><span class="text-[#354F52] font-bold text-[8px]">✦</span>GUVI-CHATGPT FOR EVERYONE</li>
+                            <li class="flex items-center gap-1.5"><span class="text-[#354F52] font-bold text-[8px]">✦</span>HP LIFE ONLINE COURSE- AI FOR BEGINNERS</li>
+                            <li class="flex items-center gap-1.5"><span class="text-[#354F52] font-bold text-[8px]">✦</span>HP LIFE ONLINE COURSE- DATA SCIENCE & ANALYTICS</li>
+                            <li class="flex items-center gap-1.5"><span class="text-[#354F52] font-bold text-[8px]">✦</span>INFOSYS SPRINGBOARD - FOUNDATION DATA SCIENCE</li>
+                            <li class="flex items-center gap-1.5"><span class="text-[#354F52] font-bold text-[8px]">✦</span>INFOSYS SPRINGBOARD - DATABASE MANAGEMENT(SQL)</li>
+                            <li class="flex items-center gap-1.5"><span class="text-[#354F52] font-bold text-[8px]">✦</span>NAAN MUTHALVAN- MICROSOFT COURSES</li>
+                        </ul>
+                    </div>
+
+                    <!-- Personal Information Section -->
+                    <div class="space-y-2">
+                        <h3 class="text-sm font-bold text-[#354F52] uppercase tracking-wider">Personal Information</h3>
+                        <hr class="border-[#C5A85C] border-t-2">
+                        <div class="grid grid-cols-2 gap-y-1 gap-x-4 font-semibold text-gray-800 text-[11px] pl-1">
+                            <div class="flex gap-2">
+                                <span class="text-gray-500 font-bold uppercase text-[9px] tracking-wide w-28 text-left">FATHER NAME:</span>
+                                <span>RAVINDRAN..S</span>
+                            </div>
+                            <div class="flex gap-2">
+                                <span class="text-gray-500 font-bold uppercase text-[9px] tracking-wide w-28 text-left">DOB:</span>
+                                <span>27/03/2005</span>
+                            </div>
+                            <div class="flex gap-2">
+                                <span class="text-gray-500 font-bold uppercase text-[9px] tracking-wide w-28 text-left">NATIONALITY:</span>
+                                <span>INDIAN</span>
+                            </div>
+                            <div class="flex gap-2 col-span-2">
+                                <span class="text-gray-500 font-bold uppercase text-[9px] tracking-wide w-28 text-left flex-shrink-0">ADDRESS:</span>
+                                <span class="font-semibold text-gray-800">45, RAJAJI STREET, CHENGAM, THIRUVANAMALAI DT</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</main>
+
+<!-- Footer -->
+<footer class="w-full py-section-gap bg-surface-container-lowest dark:bg-surface-container-lowest border-t border-outline-variant/10 no-print">
+    <div class="flex flex-col md:flex-row justify-between items-start px-margin-x-mobile md:px-margin-x-desktop max-w-container-max mx-auto gap-12 md:gap-0">
+        <div class="space-y-6">
+            <a class="font-display-lg text-headline-md text-on-background dark:text-on-background" href="index.html">Rahul Ravindran</a>
+            <p class="font-body-md text-body-md text-on-surface-variant max-w-xs">Crafting digital products with a focus on simplicity and high-performance engineering.</p>
+            <p class="font-body-md text-body-md text-on-surface-variant/50">© 2026 Rahul Ravindran Built with precision.</p>
+        </div>
+        <div class="grid grid-cols-2 gap-16">
+            <div class="flex flex-col gap-4">
+                <span class="font-label-sm text-label-sm text-primary-fixed-dim uppercase tracking-wider font-bold">Navigation</span>
+                <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary-fixed-dim transition-colors duration-300" href="index.html">Home</a>
+                <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary-fixed-dim transition-colors duration-300" href="projects.html">Projects</a>
+                <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary-fixed-dim transition-colors duration-300" href="about.html">About</a>
+                <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary-fixed-dim transition-colors duration-300" href="resume.html">Resume</a>
+                <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary-fixed-dim transition-colors duration-300" href="contact.html">Contact</a>
+            </div>
+            <div class="flex flex-col gap-4">
+                <span class="font-label-sm text-label-sm text-primary-fixed-dim uppercase tracking-wider font-bold">Social</span>
+                <div class="flex gap-4 items-center">
+                    <a href="https://www.linkedin.com/in/rahul-ravindran-886043245?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" class="text-on-surface-variant hover:text-primary-fixed-dim transition-all duration-300 transform hover:scale-110 active:scale-95" aria-label="LinkedIn">
+                        <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                        </svg>
+                    </a>
+                    <a href="https://wa.me/919790256404" target="_blank" rel="noopener noreferrer" class="text-on-surface-variant hover:text-primary-fixed-dim transition-all duration-300 transform hover:scale-110 active:scale-95" aria-label="WhatsApp">
+                        <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.59-4.846c1.66.986 3.296 1.48 4.905 1.481 5.482 0 9.94-4.461 9.943-9.945.002-2.657-1.03-5.155-2.905-7.03C16.715 1.78 14.223.747 11.565.747c-5.486 0-9.944 4.461-9.947 9.945-.001 1.777.478 3.493 1.39 5.022L2.004 22l6.402-1.68c1.554.847 3.1 1.28 4.241 1.28zM17.66 14.86c-.29-.145-1.713-.846-1.977-.942-.265-.096-.458-.145-.65.145-.19.29-.738.941-.904 1.133-.166.19-.333.214-.623.07-.29-.145-1.226-.452-2.335-1.442-.863-.77-1.446-1.72-1.616-2.011-.17-.29-.018-.447.127-.591.13-.13.29-.338.435-.507.145-.17.193-.29.29-.483.097-.19.048-.361-.024-.506-.072-.145-.65-1.566-.89-2.146-.234-.56-.472-.483-.65-.492-.17-.008-.361-.01-.554-.01-.193 0-.506.072-.77.361-.266.29-1.012.99-1.012 2.413 0 1.422 1.036 2.795 1.18 2.99.145.19 2.04 3.115 4.94 4.368.69.298 1.23.476 1.65.61.693.22 1.325.19 1.824.115.556-.083 1.713-.699 1.953-1.374.24-.675.24-1.253.169-1.374-.072-.121-.265-.193-.555-.338z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.instagram.com/_.r_a_h_u_l._03?igsh=aG51Zmt6bDFkYmNj" target="_blank" rel="noopener noreferrer" class="text-on-surface-variant hover:text-primary-fixed-dim transition-all duration-300 transform hover:scale-110 active:scale-95" aria-label="Instagram">
+                        <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Toggle Accordion Details
+    function toggleTimelineDetail(id) {
+        const detailPanel = document.getElementById(id);
+        const triggerText = document.getElementById(id + '-trigger');
+        const triggerIcon = document.getElementById(id + '-icon');
+        
+        const isExpanded = detailPanel.classList.contains('expanded');
+        
+        // Collapse all panels first
+        document.querySelectorAll(".timeline-detail").forEach(panel => {
+            panel.classList.remove('expanded');
+            const key = panel.id.replace('-detail', '');
+            const txt = document.getElementById(key + '-trigger');
+            const ico = document.getElementById(key + '-icon');
+            if (txt) txt.textContent = 'Click to expand details';
+            if (ico) ico.style.transform = 'rotate(0deg)';
+        });
+        
+        if (!isExpanded) {
+            // Expand this panel
+            detailPanel.classList.add('expanded');
+            triggerText.textContent = 'Click to collapse details';
+            triggerIcon.style.transform = 'rotate(180deg)';
+        }
+    }
+
+
+    // Simulated PDF Compilation Micro-Interaction
+    const downloadBtn = document.getElementById('download-pdf-btn');
+    const modal = document.getElementById('download-modal');
+    const loaderCircle = document.getElementById('loader-circle');
+    const loaderProgress = document.getElementById('loader-progress');
+    const loaderStatus = document.getElementById('loader-status');
+    const loaderSub = document.getElementById('loader-sub');
+    const loaderIcon = document.getElementById('loader-icon');
+
+    const downloadSteps = [
+        { progress: 20, status: "Compiling Vector Assets...", sub: "Assembling typography systems...", icon: "hourglass_top" },
+        { progress: 50, status: "Optimizing Document Grid...", sub: "Mapping margins and atomic spacers...", icon: "view_quilt" },
+        { progress: 85, status: "Rendering PDF Styles...", sub: "Creating high-contrast document nodes...", icon: "auto_awesome" },
+        { progress: 100, status: "Download Complete!", sub: "Exporting Rahul Ravindran_RESUME.pdf", icon: "check_circle" }
+    ];
+
+    downloadBtn.addEventListener('click', () => {
+        // Reset and Show
+        modal.classList.remove('opacity-0', 'pointer-events-none');
+        modal.classList.add('opacity-100');
+        document.body.classList.add('overflow-hidden');
+
+        let currentStep = 0;
+
+        function runStep() {
+            const step = downloadSteps[currentStep];
+            loaderProgress.style.width = `${step.progress}%`;
+            loaderCircle.setAttribute('stroke-dasharray', `${step.progress}, 100`);
+            loaderStatus.textContent = step.status;
+            loaderSub.textContent = step.sub;
+            loaderIcon.textContent = step.icon;
+
+            if (currentStep < downloadSteps.length - 1) {
+                currentStep++;
+                setTimeout(runStep, 1000);
+            } else {
+                // Completed
+                setTimeout(() => {
+                    // Trigger actual print/simulate file download
+                    const link = document.createElement('a');
+                    link.href = '#';
+                    link.setAttribute('download', 'Rahul Ravindran_RESUME.pdf');
+                    document.body.appendChild(link);
+                    // Open printer utility
+                    window.print();
+                    
+                    // Close Modal
+                    modal.classList.remove('opacity-100');
+                    modal.classList.add('opacity-0', 'pointer-events-none');
+                    document.body.classList.remove('overflow-hidden');
+                    
+                    // Reset loaders
+                    loaderProgress.style.width = '0%';
+                    loaderCircle.setAttribute('stroke-dasharray', '0, 100');
+                }, 1200);
+            }
+        }
+
+        setTimeout(runStep, 400);
+    });
+
+    // Mobile Menu Drawer Control
+    const menuToggle = document.getElementById('mobile-menu-toggle');
+    const menuClose = document.getElementById('mobile-menu-close');
+    const menuBackdrop = document.getElementById('mobile-menu-backdrop');
+    const menuDrawer = document.getElementById('mobile-menu-drawer');
+
+    function openMobileMenu() {
+        menuBackdrop.classList.remove('pointer-events-none', 'opacity-0');
+        menuBackdrop.classList.add('opacity-100');
+        menuDrawer.classList.remove('translate-x-full');
+        document.body.classList.add('overflow-hidden');
+    }
+
+    function closeMobileMenu() {
+        menuBackdrop.classList.remove('opacity-100');
+        menuBackdrop.classList.add('opacity-0', 'pointer-events-none');
+        menuDrawer.classList.add('translate-x-full');
+        document.body.classList.remove('overflow-hidden');
+    }
+
+    menuToggle.addEventListener('click', openMobileMenu);
+    menuClose.addEventListener('click', closeMobileMenu);
+    menuBackdrop.addEventListener('click', (e) => {
+        if (e.target === menuBackdrop) closeMobileMenu();
+    });
+
+        // Logo swipe-out animation on load
+        (function() {
+            const logoContainers = document.querySelectorAll('.logo-container');
+            if (logoContainers.length > 0) {
+                setTimeout(() => {
+                    logoContainers.forEach(container => {
+                        container.classList.add('expanded');
+                    });
+                }, 800);
+            }
+        })();
+
+        // Scroll-driven Animation Trigger using IntersectionObserver
+        window.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.15 // trigger when 15% of the element is visible
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const target = entry.target;
+                        
+                        // 1. Internships (drape reveal)
+                        if (target.classList.contains('internship-card')) {
+                            const siblings = Array.from(target.parentNode.children);
+                            const index = siblings.filter(el => el.classList.contains('internship-card')).indexOf(target);
+                            target.style.animationDelay = `${index * 150}ms`;
+                            target.classList.add('animate-drape');
+                            observer.unobserve(target);
+                        }
+                        
+                        // 2. Education (fall over reveal)
+                        if (target.classList.contains('edu-card')) {
+                            const siblings = Array.from(target.parentNode.children);
+                            const index = siblings.filter(el => el.classList.contains('edu-card')).indexOf(target);
+                            target.style.animationDelay = `${index * 150}ms`;
+                            target.classList.add('animate-fall-over');
+                            observer.unobserve(target);
+                        }
+                        
+                        // 3. Projects (crush reveal)
+                        if (target.classList.contains('project-card')) {
+                            const siblings = Array.from(target.parentNode.children);
+                            const index = siblings.filter(el => el.classList.contains('project-card')).indexOf(target);
+                            target.style.animationDelay = `${index * 150}ms`;
+                            target.classList.add('animate-crush');
+                            observer.unobserve(target);
+                        }
+
+                        // 4. Skills & Tools Section
+                        if (target.classList.contains('skills-card')) {
+                            const skillItems = target.querySelectorAll('.skill-item');
+                            skillItems.forEach((item, index) => {
+                                const skillTarget = parseInt(item.getAttribute('data-target'));
+                                const bar = item.querySelector('.skill-bar');
+                                const pctText = item.querySelector('.skill-percentage');
+                                
+                                // Animate bar width
+                                setTimeout(() => {
+                                    if (bar) bar.style.width = `${skillTarget}%`;
+                                }, index * 80);
+
+                                // Fast count text
+                                let current = 0;
+                                const duration = 800; // 0.8s
+                                const stepTime = Math.max(5, Math.floor(duration / skillTarget));
+                                
+                                setTimeout(() => {
+                                    const timer = setInterval(() => {
+                                        current += 1;
+                                        if (pctText) pctText.textContent = `${current}%`;
+                                        if (current >= skillTarget) {
+                                            clearInterval(timer);
+                                        }
+                                    }, stepTime);
+                                }, 100);
+                            });
+                            observer.unobserve(target);
+                        }
+
+                        // 5. Certifications Section
+                        if (target.classList.contains('cert-card')) {
+                            const certItems = target.querySelectorAll('.cert-item');
+                            certItems.forEach((item, index) => {
+                                const icon = item.querySelector('.cert-icon');
+                                const text = item.querySelector('.cert-text');
+                                if (icon && text) {
+                                    icon.style.animationDelay = `${index * 80}ms`;
+                                    text.style.animationDelay = `${index * 80 + 150}ms`;
+                                    icon.classList.add('animate-fly-icon');
+                                    text.classList.add('animate-fade-text');
+                                }
+                            });
+                            observer.unobserve(target);
+                        }
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all elements
+            document.querySelectorAll('.internship-card, .edu-card, .project-card').forEach(el => {
+                // Ensure they start invisible/hidden
+                el.style.opacity = '0';
+                observer.observe(el);
+            });
+
+            // Observe the Skills & Tools card
+            const skillsCard = document.querySelector('.skill-item')?.closest('.glass-card');
+            if (skillsCard) {
+                skillsCard.classList.add('skills-card');
+                observer.observe(skillsCard);
+            }
+
+            // Observe the Certifications card
+            const certCard = document.querySelector('.cert-item')?.closest('.glass-card');
+            if (certCard) {
+                certCard.classList.add('cert-card');
+                observer.observe(certCard);
+            }
+        });
+</script>
+</body>
+</html>
+
